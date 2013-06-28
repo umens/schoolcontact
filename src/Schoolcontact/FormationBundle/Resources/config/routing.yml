@@ -7,3 +7,6 @@ schoolcontact_connecte_homepage:
 schoolcontact_messagerie_homepage:
     pattern:  /messagerie
     defaults: { _controller: SchoolcontactFormationBundle:Formation:messagerie }
+schoolcontact_gestion_homepage:
+    pattern:  /gestion
+    defaults: { _controller: SchoolcontactFormationBundle:Formation:gestion }
