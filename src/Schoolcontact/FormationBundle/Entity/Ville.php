@@ -4,6 +4,7 @@ namespace Schoolcontact\FormationBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Schoolcontact\FormationBundle\Entity\Departement;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Ville
@@ -30,10 +31,27 @@ class Ville
     private $nom;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="cp", type="integer")
+     */
+    private $cp;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Schoolcontact\FormationBundle\Entity\Departement", inversedBy="villes")
      * @ORM\JoinColumn(nullable=false)
      */
     private $departement;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Schoolcontact\FormationBundle\Entity\Ecole", inversedBy="villes")
+     * @ORM\JoinTable(name="villes_ecoles")
+     */
+    private $ecoles;
+
+    public function __construct() {
+        $this->ecoles = new ArrayCollection();
+    }
 
 
     /**
@@ -67,6 +85,29 @@ class Ville
     public function getNom()
     {
         return $this->nom;
+    }
+
+    /**
+     * Set cp
+     *
+     * @param integer $cp
+     * @return Ville
+     */
+    public function setCp($cp)
+    {
+        $this->cp = $cp;
+    
+        return $this;
+    }
+
+    /**
+     * Get cp
+     *
+     * @return integer 
+     */
+    public function getCp()
+    {
+        return $this->cp;
     }
 
     /**

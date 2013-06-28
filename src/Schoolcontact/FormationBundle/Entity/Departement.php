@@ -27,16 +27,16 @@ class Departement
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255)
      */
-    private $nom;
+    private $name;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="numero", type="integer")
+     * @ORM\Column(name="code", type="integer")
      */
-    private $numero;
+    private $code;
 
     /**
      * @ORM\ManyToOne(targetEntity="Schoolcontact\FormationBundle\Entity\Region", inversedBy="departements")
@@ -66,49 +66,49 @@ class Departement
     }
 
     /**
-     * Set nom
+     * Set name
      *
-     * @param string $nom
+     * @param string $name
      * @return Departement
      */
-    public function setNom($nom)
+    public function setName($name)
     {
-        $this->nom = $nom;
+        $this->name = $name;
     
         return $this;
     }
 
     /**
-     * Get nom
+     * Get name
      *
      * @return string 
      */
-    public function getNom()
+    public function getName()
     {
-        return $this->nom;
+        return $this->name;
     }
 
     /**
-     * Set numero
+     * Set code
      *
-     * @param integer $numero
+     * @param integer $code
      * @return Departement
      */
-    public function setNumero($numero)
+    public function setCode($code)
     {
-        $this->numero = $numero;
+        $this->code = $code;
     
         return $this;
     }
 
     /**
-     * Get numero
+     * Get code
      *
      * @return integer 
      */
-    public function getNumero()
+    public function getCode()
     {
-        return $this->numero;
+        return $this->code;
     }
 
     /**
