@@ -1,0 +1,3 @@
+schoolcontact_formation_homepage:
+    pattern:  /
+    defaults: { _controller: SchoolcontactFormationBundle:Formation:index }

@@ -1,0 +1,14 @@
+{% extends "::base_email.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+	{% autoescape false %}
+		{{ 'registration.email.message'|trans({'%username%': user.username, '%confirmationUrl%': confirmationUrl}) }}
+	{% endautoescape %}
+{% endblock %}
+
+{% block subject %}
+	{% autoescape false %}
+		{{ 'registration.email.subject'|trans({'%username%': user.username}) }}
+	{% endautoescape %}
+{% endblock %}

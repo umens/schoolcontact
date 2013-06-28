@@ -1,0 +1,39 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+
+    {% for type, messages in app.session.flashbag.all() %}
+        {% for key, message in messages %}
+            <div class="flash-{{ type }}">
+                {{ message|trans({}, 'FOSUserBundle') }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+    
+    <div>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
+            {% if app.user.firstname is null and app.user.lastname is null %}
+                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+            {% else %}
+                {{ 'layout.logged_in_as'|trans({'%username%': [app.user.firstname, app.user.lastname]|join(' ') }, 'FOSUserBundle') }} |
+            {% endif %}
+
+            
+            <a href="{{ path('fos_user_security_logout') }}">
+                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+            </a>
+        {% else %}
+            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            <div>
+                {% block fos_user_content %}
+                {% endblock fos_user_content %}
+            </div>
+
+            <div id="facebook_login">
+                {{ facebook_login_button({'autologoutlink': true, 'size': 'large'}) }}
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}

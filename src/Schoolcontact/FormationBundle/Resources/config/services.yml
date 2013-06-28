@@ -1,0 +1,7 @@
+parameters:
+#    schoolcontact_formation.example.class: Schoolcontact\FormationBundle\Example
+
+services:
+#    schoolcontact_formation.example:
+#        class: %schoolcontact_formation.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

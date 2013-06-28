@@ -1,0 +1,7 @@
+schoolcontact_formation:
+    resource: "@SchoolcontactFormationBundle/Resources/config/routing.yml"
+    prefix:   /
+
+schoolcontact_user:
+    resource: "@SchoolcontactUserBundle/Resources/config/routing.yml"
+    prefix:   /

@@ -1,3 +1,5 @@
+## Symfony 2 ignore
+
 # Bootstrap
 app/bootstrap*
 
@@ -11,3 +13,12 @@ web/bundles/*
 # Configuration files
 app/config/parameters.ini
 app/config/parameters.yml
+
+
+## Autres
+
+# Sublime Text 2
+sftp-config.json
+
+# System
+.DS_Store

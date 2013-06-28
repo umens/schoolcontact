@@ -1,0 +1,29 @@
+fos_user_group_list:
+    pattern: /list
+    defaults : { _controller :FOSUserBundle:Group:list }
+    requirements:
+        _method: GET
+
+fos_user_group_new:
+    pattern: /new
+    defaults : { _controller :FOSUserBundle:Group:new }
+    requirements:
+        _method: GET|POST
+
+fos_user_group_show:
+    pattern: /{groupname}
+    defaults : { _controller :FOSUserBundle:Group:show }
+    requirements:
+        _method: GET
+
+fos_user_group_edit:
+    pattern: /{groupname}/edit
+    defaults : { _controller :FOSUserBundle:Group:edit }
+    requirements:
+        _method: GET|POST
+
+fos_user_group_delete:
+    pattern: /{groupname}/delete
+    defaults : { _controller :FOSUserBundle:Group:delete }
+    requirements:
+        _method: GET

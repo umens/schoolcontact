@@ -1,0 +1,28 @@
+fos_user_security:
+    resource: "routing/security.yml"
+
+fos_user_profile:
+    resource: "routing/profile.yml"
+    prefix: /compte
+
+fos_user_register:
+    resource: "routing/registration.yml"
+    prefix: /inscription
+
+fos_user_resetting:
+    resource: "routing/resetting.yml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "routing/change_password.yml"
+    prefix: /compte
+
+fos_user_group:
+    resource: "routing/group.yml"
+    prefix: /groupe
+
+facebook_security_check:
+    pattern:  /facebook-connexion-check
+
+facebook_security_logout:
+    pattern:  /facebook-logout
