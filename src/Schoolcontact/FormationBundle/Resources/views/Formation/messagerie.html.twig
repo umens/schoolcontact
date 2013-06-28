@@ -1,0 +1,211 @@
+{% extends 'SchoolcontactFormationBundle::header.html.twig' %}
+
+{% block title %}Consulter{% endblock %}
+
+{% block body %}
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#"><img src="/bootstrap/img/logo-navbar.png" alt="logo" style="width:110px; height:46px;" /></a>
+          <div class="nav-collapse collapse">
+            
+            <div class="navbar-form pull-right">
+              <ul class="nav">
+              <li><a href="home.html"><img src="/bootstrap/img/consulter-blanc.png" alt="logo" style="width:15px; height:14px;padding-left:10px;padding-right:10px" />Accueil</a></li>
+              <li>
+                <a href="#" ><img src="/bootstrap/img/deposer-blanc.png" alt="logo" style="width:15px; height:14px;padding-left:10px;padding-right:10px" />Mon Compte</a>
+              </li>
+            </ul>
+            </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+<div id="deposer" class="deposer">  
+      <div>              
+          <a href="#close" title="Close" class="close">X</a>                 
+          <form class="form-horizontal">
+              <div class="heading" style="margin-left : 30px;">
+                <h2 class="form-heading">Déposer un avis</h2>
+              </div>
+              <div class="pointille"></div>
+              <div class="control-group">
+                <label class="control-label" style="width:110px" for="inputName">Nom de l'école</label>
+                <div class="controls">
+                  <div class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Selection <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li class="nav-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+              </div>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" style="width:110px" for="inputResponsable">Votre Avis</label>
+                <div class="controls">
+                  <textarea name="comments" rows="7" cols="30" required placeholder="vorte avis..."></textarea>
+                </div>
+              </div>
+              <div class="control-group">
+                <button type="submit" style="float:right"class="btn btn-primary">Déposer</button>
+              </div>
+              
+              
+            </form> 
+        
+      </div>
+    </div>
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h3>Hello, Depardieu Gérard!</h3>
+        <img src="/bootstrap/img/profil.png" alt="logo" style="float:left;width:auto;padding-right:10px" />
+        <p>
+          Actuellemnt Acteur chez Gaumont Pathé<br>
+          Né le 12 janvier 1956, Medum<br>
+          <img src="/bootstrap/img/mail.png" alt="logo" style="width:20px"/> : mail@gmail.com<br>
+          <img src="/bootstrap/img/tel.png" alt="logo" style="width:20px"/> : 0612345678
+        </p>
+        <p></p>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="box">
+        <div class="box-left-messagerie">
+          <h3 style="color:#f7931e;padding-left:15px">Historique Messages</h3>
+              <div style="margin-left:0px;margin-top:-10px;padding-bottom:15px;margin-left:10px">
+                  <input type="text" class="search-query" placeholder="Search" style="height:20px">
+                  <button type="submit" class="btn"><i class="icon-search"></i></button>
+              </div>
+          <ul class="message">
+              <li>
+                <img src="bootstrap/img/profil.png" alt="logo" style="float:left;width:auto;padding-right:10px" />
+                <p>
+                Je suis une connasse et je pu des pieds pas comme les autres
+                </p>
+                <p style="float:right">
+                le 12/12/12
+                </p>
+            </li>
+            <li>
+                <img src="bootstrap/img/profil.png" alt="logo" style="float:left;width:auto;padding-right:10px" />
+                <p>
+                Je suis une connasse et je pu des pieds pas comme les autres
+                </p>
+                <p style="float:right">
+                le 12/12/12
+                </p>
+            </li>
+            <li>
+                <img src="bootstrap/img/profil.png" alt="logo" style="float:left;width:auto;padding-right:10px" />
+                <p>
+                Je suis une connasse et je pu des pieds pas comme les autres
+                </p>
+                <p style="float:right">
+                le 12/12/12
+                </p>
+            </li>
+            <li>
+                <img src="bootstrap/img/profil.png" alt="logo" style="float:left;width:auto;padding-right:10px" />
+                <p>
+                Je suis une connasse et je pu des pieds pas comme les autres
+                </p>
+                <p style="float:right">
+                le 12/12/12
+                </p>
+            </li>
+          </ul>
+       </div>
+       <div class="box-right-messagerie">
+        <div class="top-message">
+          <h3 style="color:#f7931e;padding-left:15px;border-bottom: 1px dashed black;">Conversations : </h3>
+          <div id="fat-menu" class="dropdown">
+                      <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">Dropdown 3 <b class="caret"></b></a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                      </ul>
+                    </div></div>
+         <ul class="contenu-message">
+              <li class="left">
+                <p>Yo, y'a pas un petit probleme avec le css quand on ouvre une des pages?</p>
+                <p class="date-message">le 12/12/12, à 13h32</p>
+              </li>
+              <li class="right">
+                <p>dans formationBundle/views j'ai rassembler els pagesdans formationBundle/views j'ai rassembler els pagesdans formationBundle/views j'ai rassembler els pagesdans formationBundle/views j'ai rassembler els pages</p>
+                <p class="date-message">le 12/12/12, à 13h32</p>
+              </li>
+              <li class="left">
+                <p>Yo, y'a pas un petit probleme avec le css quand on ouvre une des pages?</p>
+                <p class="date-message">le 12/12/12, à 13h32</p>
+              </li>
+              <li class="right">
+                <p>dans formationBundle/views j'ai rassembler els pagedans formationBundle/views j'ai rassembler els pagesdans formationBundle/views j'ai rassembler els pagesdans formationBundle/views j'ai rassembler els pagess</p>
+                <p class="date-message">le 12/12/12, à 13h32</p>
+              </li>
+              <li class="left">
+                <p>Yo, y'a pas un petit probleme avec le css quand on ouvre une des pages?</p>
+                <p class="date-message">le 12/12/12, à 13h32</p>
+              </li>
+              <li class="right">
+                <p>dans formationBundle/views j'ai rassembler els pagedans formationBundle/views j'ai rassembler els pagesdans formationBundle/views j'ai rassembler els pagesdans formationBundle/views j'ai rassembler els pagess</p>
+                <p class="date-message">le 12/12/12, à 13h32</p>
+              </li>
+              <li class="left">
+                <p>Yo, y'a pas un petit probleme avec le css quand on ouvre une des pages?</p>
+                <p class="date-message">le 12/12/12, à 13h32</p>
+              </li>
+              <li class="right">
+                <p>dans formationBundle/views j'ai rassembler els pagedans formationBundle/views j'ai rassembler els pagesdans formationBundle/views j'ai rassembler els pagesdans formationBundle/views j'ai rassembler els pagess</p>
+                <p class="date-message">le 12/12/12, à 13h32</p>
+              </li>
+              <li class="left">
+                <p>Yo, y'a pas un petit probleme avec le css quand on ouvre une des pages?</p>
+                <p class="date-message">le 12/12/12, à 13h32</p>
+              </li>
+              <li class="right">
+                <p>dans formationBundle/views j'ai rassembler els pagedans formationBundle/views j'ai rassembler els pagesdans formationBundle/views j'ai rassembler els pagesdans formationBundle/views j'ai rassembler els pagess</p>
+                <p class="date-message">le 12/12/12, à 13h32</p>
+              </li>
+         </ul>
+         <textarea name="comments" style="width:100%;height:100px" required placeholder="vorte réponse..."></textarea>
+       </div>
+        
+      </div>
+
+      
+
+    </div> <!-- /container -->
+  <footer>
+    <div class="menu-bottom">
+        <ul>
+              <li >
+                <img src="/bootstrap/img/consulter-blanc.png" alt="logo" style="width:25px; height:24px;margin-left:12%;" /><br>
+                <a href="index.html">Consulter</a>
+              </li>
+              <li><a href="#deposer"><img src="/bootstrap/img/deposer-blanc.png" alt="logo" style="width:25px; height:24px;margin-left:9%;" /><br>Déposer</a></li>
+              <li><a href="messagerie.html"><img src="/bootstrap/img/messagerie.png" alt="logo" style="width:25px; height:24px;margin-left:14%;" /><br>Messagerie</a></li>
+              <li><a href="gestion.html"><img src="/bootstrap/img/gestion-blanc.png" alt="logo" style="width:25px; height:24px;margin-left:9%;" /><br>Gestion</a></li>
+                </ul>
+              
+            </ul>
+      </div>
+      </footer>
+
+
+{% endblock %}

@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Gestion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+     <link href="bootstrap/css/monstyle.css" rel="stylesheet">
+ <script src="bootstrap/js/bootstrap.js"></script>
+ <script src="http://code.jquery.com/jquery.js"></script>
+<script src="bootstrap/js/bootstrap-transition.js"></script>
+    <script src="bootstrap/js/bootstrap-alert.js"></script>
+    <script src="bootstrap/js/bootstrap-modal.js"></script>
+    <script src="bootstrap/js/bootstrap-dropdown.js"></script>
+    <script src="bootstrap/js/bootstrap-scrollspy.js"></script>
+    <script src="bootstrap/js/bootstrap-tab.js"></script>
+    <script src="bootstrap/js/bootstrap-tooltip.js"></script>
+    <script src="bootstrap/js/bootstrap-popover.js"></script>
+    <script src="bootstrap/js/bootstrap-button.js"></script>
+    <script src="bootstrap/js/bootstrap-collapse.js"></script>
+    <script src="bootstrap/js/bootstrap-carousel.js"></script>
+    <script src="bootstrap/js/bootstrap-typeahead.js"></script>
+
+    <!-- Font Face Corbel -->
+    <script src="http://cufon.shoqolate.com/js/cufon-yui.js" type="text/javascript"></script>
+    <script src="bootstrap/js/corbel.cufonfonts.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    Cufon.replace('.corbel_bold_italic', { fontFamily: 'Corbel Bold Italic', hover: true }); 
+    Cufon.replace('.corbel_italic', { fontFamily: 'Corbel Italic', hover: true }); 
+    Cufon.replace('.corbel_bold', { fontFamily: 'Corbel Bold', hover: true }); 
+    Cufon.replace('.corbel', { fontFamily: 'Corbel', hover: true }); 
+    </script>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#"><img src="bootstrap/img/logo-navbar.png" alt="logo" style="width:110px; height:46px;" /></a>
+          <div class="nav-collapse collapse">
+            
+            <div class="navbar-form pull-right">
+              <ul class="nav">
+              <li><a href="home.html"><img src="bootstrap/img/consulter-blanc.png" alt="logo" style="width:15px; height:14px;padding-left:10px;padding-right:10px" />Accueil</a></li>
+              <li>
+                <a href="#" ><img src="bootstrap/img/deposer-blanc.png" alt="logo" style="width:15px; height:14px;padding-left:10px;padding-right:10px" />Mon Compte</a>
+              </li>
+            </ul>
+            </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h3>Hello, Depardieu Gérard!</h3>
+        <img src="bootstrap/img/profil.png" alt="logo" style="float:left;width:auto;padding-right:10px" />
+        <p>
+          Actuellemnt Acteur chez Gaumont Pathé<br>
+          Né le 12 janvier 1956, Medum<br>
+          <img src="bootstrap/img/mail.png" alt="logo" style="width:20px"/> : mail@gmail.com<br>
+          <img src="bootstrap/img/tel.png" alt="logo" style="width:20px"/> : 0612345678
+        </p>
+        <p></p>
+      </div>
+<div id="deposer" class="deposer">  
+      <div>              
+          <a href="#close" title="Close" class="close">X</a>                 
+          <form class="form-horizontal">
+              <div class="heading" style="margin-left : 30px;">
+                <h2 class="form-heading">Déposer un avis</h2>
+              </div>
+              <div class="pointille"></div>
+              <div class="control-group">
+                <label class="control-label" style="width:110px" for="inputName">Nom de l'école</label>
+                <div class="controls">
+                  <div class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Selection <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li class="nav-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+              </div>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" style="width:110px" for="inputResponsable">Votre Avis</label>
+                <div class="controls">
+                  <textarea name="comments" rows="7" cols="30" required placeholder="vorte avis..."></textarea>
+                </div>
+              </div>
+              <div class="control-group">
+                <button type="submit" style="float:right"class="btn btn-primary">Déposer</button>
+              </div>
+              
+              
+            </form> 
+        
+      </div>
+    </div>
+      <!-- Example row of columns -->
+      <div class="box-gestion">
+        
+          <h2>Back Office de gestion :</h2>
+          <div class="pointille"></div>
+          <div>
+            <ul class="menu-gestion">
+              <li class="active">
+                <a href="gestion.html">Avis</a>
+              </li>
+              <li>
+                <a href="#">Users</a>
+              </li>
+              <li>
+                <a href="adminEcole.html">Ecole</a>
+              </li>
+              <li>
+                <a href="#">Formation</a>
+              </li>
+            </ul>
+          </div>
+          <div class="vide"></div>
+          <div class="well">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                    <th style="width: 36px;"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Tompson</td>
+                    <td>the_mark7</td>
+                    <td>
+                        <a href="user.html"><i class="icon-pencil"></i></a>
+                        <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Ashley</td>
+                    <td>Jacobs</td>
+                    <td>ash11927</td>
+                    <td>
+                        <a href="user.html"><i class="icon-pencil"></i></a>
+                        <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Audrey</td>
+                    <td>Ann</td>
+                    <td>audann84</td>
+                    <td>
+                        <a href="user.html"><i class="icon-pencil"></i></a>
+                        <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+                    </td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+          </div>
+          <div class="pagination">
+              <ul>
+                  <li><a href="#">Prev</a></li>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">Next</a></li>
+              </ul>
+          </div>
+          <div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h3 id="myModalLabel">Delete Confirmation</h3>
+              </div>
+              <div class="modal-body">
+                  <p class="error-text">Are you sure you want to delete the user?</p>
+              </div>
+              <div class="modal-footer">
+                  <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                  <button class="btn btn-danger" data-dismiss="modal">Delete</button>
+              </div>
+          </div>
+          </div>
+      
+        
+    </div> <!-- /container -->
+  <footer>
+    <div class="menu-bottom">
+        <ul>
+              <li class="active">
+                <img src="bootstrap/img/consulter-blanc.png" alt="logo" style="width:25px; height:24px;margin-left:12%;" /><br>
+                <a href="index.html">Consulter</a>
+              </li>
+              <li><a href="#deposer"><img src="bootstrap/img/deposer-blanc.png" alt="logo" style="width:25px; height:24px;margin-left:9%;" /><br>Déposer</a></li>
+              <li><a href="messagerie.html"><img src="bootstrap/img/messagerie-blanc.png" alt="logo" style="width:25px; height:24px;margin-left:14%;" /><br>Messagerie</a></li>
+              <li><a href="#"><img src="bootstrap/img/gestion.png" alt="logo" style="width:25px; height:24px;margin-left:9%;" /><br>Gestion</a></li>
+                </ul>
+              
+            </ul>
+      </div>
+      </footer>
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster
+    <script src="bootstrap/js/bootstrap.js"></script>
+
+    <script src="bootstrap/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+-->
+  </body>
+</html>

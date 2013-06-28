@@ -1,0 +1,341 @@
+{% extends 'SchoolcontactFormationBundle::header.html.twig' %}
+
+{% block title %}Consulter{% endblock %}
+
+{% block body %}
+
+ <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#"><img src="/bootstrap/img/logo-navbar.png" alt="logo" style="width:110px; height:46px;" /></a>
+          <a class="brand" style="margin-top:15px"href="#newsletter">Newsletter</a>  
+          <div class="nav-collapse collapse">
+            
+            <div class="navbar-form pull-right">
+              <ul class="nav">
+              <li><a href="home.html"><img src="/bootstrap/img/consulter-blanc.png" alt="logo" style="width:15px; height:14px;padding-left:10px;padding-right:10px" />Accueil</a></li>
+              <li>
+                <a href="#" ><img src="/bootstrap/img/deposer-blanc.png" alt="logo" style="width:15px; height:14px;padding-left:10px;padding-right:10px" />Mon Compte</a>
+              </li>
+            </ul>
+            </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    <div id="newsletter" class="modalDialog">  
+      <div>              
+          <a href="#close" title="Close" class="close">X</a>                 
+          <form action="http://www.emailposte.com/form.php?id=1015&type=sub" method="post" name="frmSS" onSubmit="javascript: return CheckSS();">
+          <input type="hidden" name="mid" value="2903">
+          <table cellspacing="0" cellpadding="0">
+            <tr>
+              <td colspan="2"><h3><b>School Contact</b></h3></td>
+            </tr>
+              <tr>
+              <td width="40%"><font color="red"><b>*</b></font>&nbsp;Prénom:</td>
+              <td width="60%">
+                <input type="text" name="name" value="" size="30">
+                    </td>
+            </tr>
+            <tr>
+              <td><font color="red"><b>*</b></font>&nbsp;Nom:</td>
+              <td>
+                <input type="text" name="surname" value="" size="30">
+                    </td>
+            </tr>
+            <tr>
+              <td><font color="red"><b>*</b></font>&nbsp;Adresse Email:</td>
+              <td>
+                <input type="text" name="email" value="" size="30">
+                    </td>
+            </tr>
+
+            <!--FORM COUNSTRUCTOR-->
+                      <input type="hidden" name="SelectLists[3083]" value="YES">
+              <tr>
+              <td>&nbsp;</td>
+              <td>
+                <input type="submit" value="S abonner">
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+    <div id="deposer" class="deposer">  
+      <div>              
+          <a href="#close" title="Close" class="close">X</a>                 
+          <form class="form-horizontal">
+              <div class="heading" style="margin-left : 30px;">
+                <h2 class="form-heading">Déposer un avis</h2>
+              </div>
+              <div class="pointille"></div>
+              <div class="control-group">
+                <label class="control-label" style="width:110px" for="inputName">Nom de l'école</label>
+                <div class="controls">
+                  <div class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Selection <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li class="nav-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+              </div>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" style="width:110px" for="inputResponsable">Votre Avis</label>
+                <div class="controls">
+                  <textarea name="comments" rows="7" cols="30" required placeholder="vorte avis..."></textarea>
+                </div>
+              </div>
+              <div class="control-group">
+                <button type="submit" style="float:right"class="btn btn-primary">Déposer</button>
+              </div>
+              
+              
+            </form> 
+        
+      </div>
+    </div>
+        
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h3>Hello, Depardieu Gérard!</h3>
+        <img src="/bootstrap/img/profil.png" alt="logo" style="float:left;width:auto;padding-right:10px" />
+        <p>
+          Actuellemnt Acteur chez Gaumont Pathé<br>
+          Né le 12 janvier 1956, Medum<br>
+          <img src="/bootstrap/img/mail.png" alt="logo" style="width:20px"/> : mail@gmail.com<br>
+          <img src="/bootstrap/img/tel.png" alt="logo" style="width:20px"/> : 0612345678
+        </p>
+        <p></p>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="box">
+        <div class="box-left">
+          <h2>Consultation d'avis : <b style="float:right;color:black;font-size:18px">SCIENCE U LYON</b></h2>
+          <div class="pointille"></div>
+          <ul class="liste-consulter">
+            <li>
+              <div class="posts">
+              <div class="post-left">
+                <b style="color:#f7931e">Bernard</b><br>
+                <p style="float:left">
+                  Actuellement étudiant branleur
+                </p>
+              </div>
+              <div class="post-right">
+                <div class="rating">
+                  <a href="#5" title="Give 5 stars">☆</a>
+                  <a href="#4" title="Give 4 stars">☆</a>
+                  <a href="#3" title="Give 3 stars">☆</a>
+                  <a href="#2" title="Give 2 stars">☆</a>
+                  <a href="#1" title="Give 1 star">☆</a>
+                </div>
+                <p style="float:right">
+                  Posté le 12 Sept 2012
+                </p>
+              </div>
+              </div>
+              <p style="margin-top:70px">
+                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. <br>
+                <a href="#" style="float:right;color:#f7931e">en savoir plus...</a>
+              </p>
+            
+            </li>
+            <li>
+              <div class="posts">
+              <div class="post-left">
+                <b style="color:#f7931e">Bernard</b><br>
+                <p style="float:left">
+                  Actuellement étudiant branleur
+                </p>
+              </div>
+              <div class="post-right">
+                <div class="rating">
+                  <a href="#5" title="Give 5 stars">☆</a>
+                  <a href="#4" title="Give 4 stars">☆</a>
+                  <a href="#3" title="Give 3 stars">☆</a>
+                  <a href="#2" title="Give 2 stars">☆</a>
+                  <a href="#1" title="Give 1 star">☆</a>
+                </div>
+                <p style="float:right">
+                  Posté le 12 Sept 2012
+                </p>
+              </div>
+              </div>
+              <p style="margin-top:70px">
+                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. <br>
+                <a href="#" style="float:right;color:#f7931e">en savoir plus...</a>
+              </p>
+            
+            </li>
+            <li>
+              <div class="posts">
+              <div class="post-left">
+                <b style="color:#f7931e">Bernard</b><br>
+                <p style="float:left">
+                  Actuellement étudiant branleur
+                </p>
+              </div>
+              <div class="post-right">
+                <div class="rating">
+                  <a href="#5" title="Give 5 stars">☆</a>
+                  <a href="#4" title="Give 4 stars">☆</a>
+                  <a href="#3" title="Give 3 stars">☆</a>
+                  <a href="#2" title="Give 2 stars">☆</a>
+                  <a href="#1" title="Give 1 star">☆</a>
+                </div>
+                <p style="float:right">
+                  Posté le 12 Sept 2012
+                </p>
+              </div>
+              </div>
+              <p style="margin-top:70px">
+                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. <br>
+                <a href="#" style="float:right;color:#f7931e">en savoir plus...</a>
+              </p>
+            
+            </li>
+          </ul>
+          
+        </div>
+        </div>
+
+        <div class="box-right">
+          <h2 style="padding-left:15px">Recherche</h2>
+          <div class="pointille"></div>
+
+          <div class="form-horizontal"  style="padding:0px 15px 0px 15px" accept-charset="utf-8">
+
+          <h4>Critères de préférence</h4>
+
+          <div class="control-group">
+              <label for="country" style="width:140px;float:left"> 
+                Type de Formation : 
+              </label>
+              <div style="float:right">
+                <select name="country" id="" style="width:150px;height:20px">
+                  <option value=""></option>
+                  <option value="AR">Argentina</option>
+                </select>
+              </div>
+            </div><div class="control-group">
+              <label for="country" style="width:100px;float:left"> 
+                Promotion : 
+              </label>
+              <div style="float:right">
+                <select name="country" id="" style="width:150px;height:20px">
+                  <option value=""></option>
+                  <option value="AR">Argentina</option>
+                </select>
+              </div>
+            </div>
+
+          <h4>Critères de performance</h4>
+
+          
+          <select name="country" id="" style="width:310px;height:20px">
+                  <option value=""></option>
+                  <option value="AR">Argentina</option>
+          </select>
+          <label id="lbl_type_formation" style="width:49%;float:left;">Supérieur ou égal à :</label>
+          <div class="rating" style="float:right;width:49%;margin-top:5px">
+            <a href="#5" title="Give 5 stars">☆</a>
+            <a href="#4" title="Give 4 stars">☆</a>
+            <a href="#3" title="Give 3 stars">☆</a>
+            <a href="#2" title="Give 2 stars">☆</a>
+            <a href="#1" title="Give 1 star">☆</a>
+          </div>
+
+          <select name="country" id="" style="width:310px;height:20px">
+                  <option value=""></option>
+                  <option value="AR">Argentina</option>
+          </select>
+
+          <label id="lbl_type_formation" style="width:49%;float:left;">Supérieur ou égal à :</label>
+          <div class="rating" style="float:right;width:49%;margin-top:10px">
+            <a href="#5" title="Give 5 stars">☆</a>
+            <a href="#4" title="Give 4 stars">☆</a>
+            <a href="#3" title="Give 3 stars">☆</a>
+            <a href="#2" title="Give 2 stars">☆</a>
+            <a href="#1" title="Give 1 star">☆</a>
+          </div>
+
+          <select name="country" id="" style="width:310px;height:20px">
+                  <option value=""></option>
+                  <option value="AR">Argentina</option>
+                </select>
+          <label id="lbl_type_formation" style="width:49%;float:left;">Supérieur ou égal à :</label>
+          <div class="rating" style="float:right;width:49%;margin-top:10px">
+            <a href="#5" title="Give 5 stars">☆</a>
+            <a href="#4" title="Give 4 stars">☆</a>
+            <a href="#3" title="Give 3 stars">☆</a>
+            <a href="#2" title="Give 2 stars">☆</a>
+            <a href="#1" title="Give 1 star">☆</a>
+          </div>
+          <br>
+          <a href="#" style="margin-left:130px"class="btn btn-inverse">ok</a>
+       </div>
+       </div>
+       <div class="box2-right">
+          <h2 style="margin-left:15px">Déposer un avis</h2>
+          <div class="pointille"></div>
+         <div class="deposer-avis">
+          <label id="lbl_type_formation" style="width:49%;">Saisir un établisement :
+          </label>
+          <input type="text" name="lname"style="width:295px;height:20px" >
+            <div class="control-group">
+              <label for="country" style="float:left;width:130px"> 
+                Promotion : 
+              </label>
+              <div class="controls">
+                <select name="country" id="" style="width:130px;hieght:20px;float:right">
+                  <option value=""></option>
+                  <option value="AR">Argentina</option>
+                </select>
+              </div>
+            </div>
+          
+          <br>
+          <a href="#" style="margin-left:120px"class="btn btn-inverse">déposer</a>
+       </div>
+       </div>
+        
+      </div>
+
+      
+
+    </div> <!-- /container -->
+  <footer>
+    <div class="menu-bottom">
+        <ul>
+              <li class="active">
+                <img src="/bootstrap/img/consulter.png" alt="logo" style="width:25px; height:24px;margin-left:12%;" /><br>
+                <a href="index.html">Consulter</a>
+              </li>
+              <li><a href="#deposer"><img src="/bootstrap/img/deposer-blanc.png" alt="logo" style="width:25px; height:24px;margin-left:9%;" /><br>Déposer</a></li>
+              <li><a href="{{ path('schoolcontact_messagerie_homepage') }}"><img src="/bootstrap/img/messagerie-blanc.png" alt="logo" style="width:25px; height:24px;margin-left:14%;" /><br>Messagerie</a></li>
+              <li><a href="gestion.html"><img src="/bootstrap/img/gestion-blanc.png" alt="logo" style="width:25px; height:24px;margin-left:9%;" /><br>Gestion</a></li>
+                </ul>
+              
+            </ul>
+      </div>
+      </footer>
+   
+
+{% endblock %}
