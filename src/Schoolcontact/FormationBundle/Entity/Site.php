@@ -5,12 +5,12 @@ namespace Schoolcontact\FormationBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Ecole
+ * Site
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Schoolcontact\FormationBundle\Entity\EcoleRepository")
+ * @ORM\Entity(repositoryClass="Schoolcontact\FormationBundle\Entity\SiteRepository")
  */
-class Ecole
+class Site
 {
     /**
      * @var integer
@@ -31,16 +31,16 @@ class Ecole
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=255)
+     * @ORM\Column(name="adresse", type="string", length=255)
      */
-    private $description;
+    private $adresse;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="type", type="string", length=255)
+     * @ORM\Column(name="coordonnees", type="string", length=255)
      */
-    private $type;
+    private $coordonnees;
 
 
     /**
@@ -57,7 +57,7 @@ class Ecole
      * Set nom
      *
      * @param string $nom
-     * @return Ecole
+     * @return Site
      */
     public function setNom($nom)
     {
@@ -77,48 +77,48 @@ class Ecole
     }
 
     /**
-     * Set description
+     * Set adresse
      *
-     * @param string $description
-     * @return Ecole
+     * @param string $adresse
+     * @return Site
      */
-    public function setDescription($description)
+    public function setAdresse($adresse)
     {
-        $this->description = $description;
+        $this->adresse = $adresse;
     
         return $this;
     }
 
     /**
-     * Get description
+     * Get adresse
      *
      * @return string 
      */
-    public function getDescription()
+    public function getAdresse()
     {
-        return $this->description;
+        return $this->adresse;
     }
 
     /**
-     * Set type
+     * Set coordonnees
      *
-     * @param string $type
-     * @return Ecole
+     * @param string $coordonnees
+     * @return Site
      */
-    public function setType($type)
+    public function setCoordonnees($coordonnees)
     {
-        $this->type = $type;
+        $this->coordonnees = $coordonnees;
     
         return $this;
     }
 
     /**
-     * Get type
+     * Get coordonnees
      *
      * @return string 
      */
-    public function getType()
+    public function getCoordonnees()
     {
-        return $this->type;
+        return $this->coordonnees;
     }
 }

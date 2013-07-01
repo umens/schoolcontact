@@ -26,9 +26,9 @@ class Region
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="nom", type="string", length=255)
      */
-    private $name;
+    private $nom;
 
     /**
      * @ORM\OneToMany(targetEntity="Schoolcontact\FormationBundle\Entity\Departement", mappedBy="region")
@@ -51,26 +51,26 @@ class Region
     }
 
     /**
-     * Set name
+     * Set nom
      *
-     * @param string $name
+     * @param string $nom
      * @return Region
      */
-    public function setName($name)
+    public function setNom($nom)
     {
-        $this->name = $name;
+        $this->nom = $nom;
     
         return $this;
     }
 
     /**
-     * Get name
+     * Get nom
      *
      * @return string 
      */
-    public function getName()
+    public function getNom()
     {
-        return $this->name;
+        return $this->nom;
     }
 
     /**

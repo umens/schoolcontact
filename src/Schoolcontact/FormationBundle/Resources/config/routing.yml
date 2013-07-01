@@ -1,3 +1,24 @@
 schoolcontact_formation_homepage:
     pattern:  /
     defaults: { _controller: SchoolcontactFormationBundle:Formation:index }
+schoolcontact_connecte_homepage:
+    pattern:  /consulter
+    defaults: { _controller: SchoolcontactFormationBundle:Formation:consulter }
+schoolcontact_messagerie_homepage:
+    pattern:  /messagerie
+    defaults: { _controller: SchoolcontactFormationBundle:Formation:messagerie }
+schoolcontact_gestion_homepage:
+    pattern:  /gestion
+    defaults: { _controller: SchoolcontactFormationBundle:Formation:gestion }
+schoolcontact_gestion_ecole:
+    pattern:  /gestionEcole
+    defaults: { _controller: SchoolcontactFormationBundle:Formation:gestionEcole }
+schoolcontact_inscription_ecole:
+    pattern:  /inscriptionEcole
+    defaults: { _controller: SchoolcontactFormationBundle:Formation:inscriptionecole }
+schoolcontact_monCompte:
+    pattern:  /monCompte
+    defaults: { _controller: SchoolcontactFormationBundle:Formation:monCompte }
+schoolcontact_contact:
+    pattern:  /contact
+    defaults: { _controller: SchoolcontactFormationBundle:Formation:contact }

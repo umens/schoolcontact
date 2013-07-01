@@ -1,0 +1,199 @@
+{% extends 'SchoolcontactFormationBundle::header.html.twig' %}
+
+{% block title %}Gestion{% endblock %}
+
+{% block body %}
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#"><img src="/bootstrap/img/logo-navbar.png" alt="logo" style="width:110px; height:46px;" /></a>
+          <div class="nav-collapse collapse">
+            
+            <div class="navbar-form pull-right">
+              <ul class="nav">
+              <li><a href="home.html"><img src="/bootstrap/img/consulter-blanc.png" alt="logo" style="width:15px; height:14px;padding-left:10px;padding-right:10px" />Accueil</a></li>
+              <li>
+                <a href="#" ><img src="/bootstrap/img/deposer-blanc.png" alt="logo" style="width:15px; height:14px;padding-left:10px;padding-right:10px" />Mon Compte</a>
+              </li>
+            </ul>
+            </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h3>Hello, Depardieu Gérard!</h3>
+        <img src="/bootstrap/img/profil.png" alt="logo" style="float:left;width:auto;padding-right:10px" />
+        <p>
+          Actuellemnt Acteur chez Gaumont Pathé<br>
+          Né le 12 janvier 1956, Medum<br>
+          mail : mail@gmail.com<br>
+          tel : 0612345678
+        </p>
+        <p></p>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="box-gestion">
+        
+          <h2>Back Office de gestion :</h2>
+          <div class="pointille"></div>
+          <div>
+            <ul class="menu-gestion">
+              <li>
+                <a href="gestion.html">Avis</a>
+              </li>
+              <li>
+                <a href="#">Users</a>
+              </li>
+              <li>
+                <a href="adminEcole.html">Ecoles</a>
+              </li>
+              <li>
+                <a href="#">Formations</a>
+              </li>
+            </ul>
+          </div>
+          <div class="vide"></div>
+          <div class="well">
+              <button class="btn btn-primary" type="button">Ajouter une école</button>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Nom Ecole</th>
+                    <th>Responsable</th>
+                    <th>Adresse</th>
+                    <th>Type</th>
+                    <th style="width: 36px;"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Sciences-U Lyon</td>
+                    <td>M.Bouiche</td>
+                    <td>Cours Albert Thomas</td>
+                    <td>Privé</td>
+                    <td>
+                        <a href="#modifier" role="button" data-toggle="modal"><i class="icon-pencil"></i></a>
+                        <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>ESC Commerce</td>
+                    <td>M.Blabla</td>
+                    <td>rue des paumés</td>
+                    <td>Privé</td>
+                    <td>
+                        <a href="#modifier" role="button" data-toggle="modal"><i class="icon-pencil"></i></a>
+                        <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>HEC Paris</td>
+                    <td>Mme Tronche</td>
+                    <td>rue des boulets</td>
+                    <td>Privé</td>
+                    <td>
+                        <a href="#modifier" role="button" data-toggle="modal"><i class="icon-pencil"></i></a>
+                        <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+                    </td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+          </div>
+          <div class="pagination">
+              <ul>
+                  <li><a href="#">Prev</a></li>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">Next</a></li>
+              </ul>
+          </div>
+          <div class="modal small hide fade" id="modifier" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h3 id="myModalLabel">Modification</h3>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="inputName">Nom de l'école</label>
+                <div class="controls">
+                  <input type="text" id="inputName" required placeholder="Sciences-U Lyon">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="inputResponsable">Nom du responsable</label>
+                <div class="controls">
+                  <input type="text" id="inputResponsable" required placeholder="M. Poireaux">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="inputAdresse">Adresse</label>
+                <div class="controls">
+                  <input type="text" id="inputAdresse" required placeholder="32, rue des glandeurs">
+                </div>
+                <label class="control-label" for="inputCP">C.P</label>
+                <div class="controls">
+                  <input type="text" id="inputCP" required placeholder="69003">
+                </div>
+                <label class="control-label" for="inputVille">Ville</label>
+                <div class="controls">
+                  <input type="text" id="inputVille" required placeholder="Lyon">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="inputEmail">Email</label>
+                <div class="controls">
+                  <input type="text" id="inputEmail" required placeholder="toto@gmail.com">
+                </div>
+              </div>
+              <button class="btn btn-primary" data-dismiss="modal">Modifier</button>
+          </div>
+          <div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h3 id="myModalLabel">Confirmation</h3>
+              </div>
+              <div class="modal-body">
+                  <p class="error-text">Etes-vous certain de vouloir supprimer cette école?</p>
+              </div>
+              <div class="modal-footer">
+                  <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                  <button class="btn btn-danger" data-dismiss="modal">Supprimer</button>
+              </div>
+          </div>
+          </div>
+      
+        
+    </div> <!-- /container -->
+  <footer>
+    <div class="menu-bottom">
+        <ul>
+              <li class="active">
+                <img src="/bootstrap/img/consulter-blanc.png" alt="logo" style="width:25px; height:24px;margin-left:12%;" /><br>
+                <a href="index.html">Consulter</a>
+              </li>
+              <li><a href="#"><img src="/bootstrap/img/deposer-blanc.png" alt="logo" style="width:25px; height:24px;margin-left:9%;" /><br>Déposer</a></li>
+              <li><a href="messagerie.html"><img src="/bootstrap/img/messagerie-blanc.png" alt="logo" style="width:25px; height:24px;margin-left:14%;" /><br>Messagerie</a></li>
+              <li><a href="#"><img src="/bootstrap/img/gestion.png" alt="logo" style="width:25px; height:24px;margin-left:9%;" /><br>Gestion</a></li>
+                </ul>
+              
+            </ul>
+      </div>
+      </footer>
+{% endblock %}
