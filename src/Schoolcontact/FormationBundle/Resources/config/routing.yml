@@ -10,15 +10,15 @@ schoolcontact_messagerie_homepage:
 schoolcontact_gestion_homepage:
     pattern:  /gestion
     defaults: { _controller: SchoolcontactFormationBundle:Formation:gestion }
-schoolcontact_gestion_ecole:
-    pattern:  /gestionEcole
-    defaults: { _controller: SchoolcontactFormationBundle:Formation:gestionEcole }
+gestionecole:
+    pattern:  /gestion/ecole
+    defaults: { _controller: SchoolcontactFormationBundle:Formation:gestionecole }
 schoolcontact_inscription_ecole:
     pattern:  /inscriptionEcole
     defaults: { _controller: SchoolcontactFormationBundle:Formation:inscriptionecole }
-schoolcontact_monCompte:
+monCompte:
     pattern:  /monCompte
-    defaults: { _controller: SchoolcontactFormationBundle:Formation:monCompte }
-schoolcontact_contact:
+    defaults: { _controller: SchoolcontactFormationBundle:Formation:moncompte }
+contact:
     pattern:  /contact
     defaults: { _controller: SchoolcontactFormationBundle:Formation:contact }

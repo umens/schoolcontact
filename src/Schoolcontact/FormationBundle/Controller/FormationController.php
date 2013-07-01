@@ -3,6 +3,14 @@
 namespace Schoolcontact\FormationBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use Schoolcontact\FormationBundle\Form\AddEcoleType;
+use Schoolcontact\FormationBundle\Entity\Departement;
+use Schoolcontact\FormationBundle\Entity\Diplome;
+use Schoolcontact\FormationBundle\Entity\Ecole;
+use Schoolcontact\FormationBundle\Entity\Formation;
+use Schoolcontact\FormationBundle\Entity\Region;
+use Schoolcontact\FormationBundle\Entity\Ville;
 
 class FormationController extends Controller
 {
@@ -26,11 +34,27 @@ class FormationController extends Controller
     {
         return $this->render('SchoolcontactFormationBundle:Formation:inscriptionecole.html.twig');
     }
-    public function gestionEcoleAction()
+    public function gestionecoleAction(Request $request)
     {
-        return $this->render('SchoolcontactFormationBundle:Formation:gestionEcole.html.twig');
+        //création d'un nouveau post
+        $ecole = new Ecole();
+        //création du fomrulaire
+        $form = $this->createForm(new AddEcoleType(), $ecole);
+        //Test pour savoir si méthode post
+        if ($request->isMethod('POST')) {
+            //On récupère les données de la requête dans la form
+            $form->bind($request);
+            //On test si les données son ok
+            if ($form->isValid()) {
+                //Sauvegarde dans la base de donnée
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($ecole);
+                $em->flush();
+            }
+        }
+        return $this->render('SchoolcontactFormationBundle:Formation:gestionecole.html.twig', array('form' => $form->createView()));
     }
-    public function monCompteAction()
+    public function moncompteAction()
     {
         return $this->render('SchoolcontactFormationBundle:Formation:monCompte.html.twig');
     }

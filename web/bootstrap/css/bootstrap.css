@@ -222,21 +222,14 @@ margin-left: -30px;
   float:left;
   text-align: center;
   list-style-type: none; 
-  background-color: #1b1b1b;
-background-image: -moz-linear-gradient(top, #222222, #111111);
-background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
-background-image: -webkit-linear-gradient(top, #222222, #111111);
-background-image: -o-linear-gradient(top, #222222, #111111);
-background-image: linear-gradient(to bottom, #222222, #111111);
-background-repeat: repeat-x;
-border-color: #252525;
+  background-color: black;
 }
 .menu-gestion li a{
   color: white;
 text-decoration: none;
 
 }
-.menu-gestion li active{
+.menu-gestion li.active{
   background-color: #f7931e;
 
 }

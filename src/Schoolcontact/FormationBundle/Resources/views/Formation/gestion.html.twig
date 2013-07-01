@@ -12,14 +12,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#"><img src="bootstrap/img/logo-navbar.png" alt="logo" style="width:110px; height:46px;" /></a>
+          <a class="brand" href="#"><img src="/bootstrap/img/logo-navbar.png" alt="logo" style="width:110px; height:46px;" /></a>
           <div class="nav-collapse collapse">
             
             <div class="navbar-form pull-right">
               <ul class="nav">
-              <li><a href="home.html"><img src="bootstrap/img/consulter-blanc.png" alt="logo" style="width:15px; height:14px;padding-left:10px;padding-right:10px" />Accueil</a></li>
+              <li><a href="home.html"><img src="/bootstrap/img/consulter-blanc.png" alt="logo" style="width:15px; height:14px;padding-left:10px;padding-right:10px" />Accueil</a></li>
               <li>
-                <a href="#" ><img src="bootstrap/img/deposer-blanc.png" alt="logo" style="width:15px; height:14px;padding-left:10px;padding-right:10px" />Mon Compte</a>
+                <a href="#" ><img src="/bootstrap/img/deposer-blanc.png" alt="logo" style="width:15px; height:14px;padding-left:10px;padding-right:10px" />Mon Compte</a>
               </li>
             </ul>
             </div>
@@ -90,13 +90,13 @@
           <div>
             <ul class="menu-gestion">
               <li class="active">
-                <a href="gestion.html">Avis</a>
+                <a href="{{ path('schoolcontact_gestion_homepage') }}">Avis</a>
               </li>
               <li>
                 <a href="#">Users</a>
               </li>
               <li>
-                <a href="adminEcole.html">Ecole</a>
+                <a href="{{ path('gestionecole') }}">Ecole</a>
               </li>
               <li>
                 <a href="#">Formation</a>
@@ -182,11 +182,11 @@
         <ul>
               <li class="active">
                 <img src="bootstrap/img/consulter-blanc.png" alt="logo" style="width:25px; height:24px;margin-left:12%;" /><br>
-                <a href="index.html">Consulter</a>
+                <a href="{{ path('schoolcontact_connecte_homepage') }}">Consulter</a>
               </li>
               <li><a href="#deposer"><img src="bootstrap/img/deposer-blanc.png" alt="logo" style="width:25px; height:24px;margin-left:9%;" /><br>Déposer</a></li>
-              <li><a href="messagerie.html"><img src="bootstrap/img/messagerie-blanc.png" alt="logo" style="width:25px; height:24px;margin-left:14%;" /><br>Messagerie</a></li>
-              <li><a href="#"><img src="bootstrap/img/gestion.png" alt="logo" style="width:25px; height:24px;margin-left:9%;" /><br>Gestion</a></li>
+              <li><a href="{{ path('schoolcontact_messagerie_homepage') }}"><img src="bootstrap/img/messagerie-blanc.png" alt="logo" style="width:25px; height:24px;margin-left:14%;" /><br>Messagerie</a></li>
+              <li><a href="{{ path('schoolcontact_gestion_homepage') }}"><img src="bootstrap/img/gestion.png" alt="logo" style="width:25px; height:24px;margin-left:9%;" /><br>Gestion</a></li>
                 </ul>
               
             </ul>

@@ -50,13 +50,13 @@
           <div>
             <ul class="menu-gestion">
               <li>
-                <a href="gestion.html">Avis</a>
+                <a href="{{ path('schoolcontact_gestion_homepage') }}">Avis</a>
               </li>
               <li>
                 <a href="#">Users</a>
               </li>
-              <li>
-                <a href="adminEcole.html">Ecoles</a>
+              <li class="active">
+                <a href="{{ path('gestionecole') }}">Ecoles</a>
               </li>
               <li>
                 <a href="#">Formations</a>
@@ -65,7 +65,7 @@
           </div>
           <div class="vide"></div>
           <div class="well">
-              <button class="btn btn-primary" type="button">Ajouter une école</button>
+              <a class="btn btn-primary" role="button" data-toggle="modal" href="#ajouter">Ajouter une école</a>
               <table class="table">
                 <thead>
                   <tr>
@@ -130,6 +130,7 @@
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                   <h3 id="myModalLabel">Modification</h3>
               </div>
+
               <div class="control-group">
                 <label class="control-label" for="inputName">Nom de l'école</label>
                 <div class="controls">
@@ -164,6 +165,39 @@
               </div>
               <button class="btn btn-primary" data-dismiss="modal">Modifier</button>
           </div>
+          <div class="modal small hide fade" id="ajouter" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h3 id="myModalLabel">Ajout</h3>
+              </div>
+              <form action="" method="post" {{ form_enctype(form) }}>
+                 {{ form_errors(form) }}
+                  <div class="control-group">
+                    <label class="control-label" for="inputName">Nom de l'école</label>
+                    <div class="controls">
+                      {{ form_row(form.name) }}
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="inputResponsable">Nom du responsable</label>
+                    <div class="controls">
+                      {{ form_row(form.description) }}
+                    </div>
+                  </div>
+                  <!--
+                  <div class="control-group">
+                    <label class="control-label" for="inputAdresse">Adresse</label>
+                    <div class="controls">
+    
+                    </div>
+                    <label class="control-label" for="inputCP">C.P</label>
+                    <div class="controls">
+                      
+                    </div>-->
+                  {{ form_rest(form) }}
+              <input class="btn btn-primary" value="Ajouter" type="submit" />
+              </form>
+          </div>
           <div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -186,11 +220,11 @@
         <ul>
               <li class="active">
                 <img src="/bootstrap/img/consulter-blanc.png" alt="logo" style="width:25px; height:24px;margin-left:12%;" /><br>
-                <a href="index.html">Consulter</a>
+                <a href="{{ path('schoolcontact_connecte_homepage') }}">Consulter</a>
               </li>
-              <li><a href="#"><img src="/bootstrap/img/deposer-blanc.png" alt="logo" style="width:25px; height:24px;margin-left:9%;" /><br>Déposer</a></li>
-              <li><a href="messagerie.html"><img src="/bootstrap/img/messagerie-blanc.png" alt="logo" style="width:25px; height:24px;margin-left:14%;" /><br>Messagerie</a></li>
-              <li><a href="#"><img src="/bootstrap/img/gestion.png" alt="logo" style="width:25px; height:24px;margin-left:9%;" /><br>Gestion</a></li>
+              <li><a href="#deposer"><img src="/bootstrap/img/deposer-blanc.png" alt="logo" style="width:25px; height:24px;margin-left:9%;" /><br>Déposer</a></li>
+              <li><a href="{{ path('schoolcontact_messagerie_homepage') }}"><img src="/bootstrap/img/messagerie-blanc.png" alt="logo" style="width:25px; height:24px;margin-left:14%;" /><br>Messagerie</a></li>
+              <li><a href="{{ path('schoolcontact_gestion_homepage') }}"><img src="/bootstrap/img/gestion.png" alt="logo" style="width:25px; height:24px;margin-left:9%;" /><br>Gestion</a></li>
                 </ul>
               
             </ul>
