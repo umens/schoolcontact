@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="sc_user")
+ * @ORM\Table(name="utilisateur")
  */
 class User extends BaseUser
 {
@@ -20,7 +20,7 @@ class User extends BaseUser
 
     /**
      * @ORM\ManyToMany(targetEntity="Schoolcontact\UserBundle\Entity\Group")
-     * @ORM\JoinTable(name="fos_user_user_group",
+     * @ORM\JoinTable(name="utilisateur_groupe",
      *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
      * )

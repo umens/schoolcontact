@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="sc_group")
+ * @ORM\Table(name="groupe")
  */
 class Group extends BaseGroup
 {

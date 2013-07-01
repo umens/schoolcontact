@@ -45,7 +45,7 @@ class Ville
 
     /**
      * @ORM\ManyToMany(targetEntity="Schoolcontact\FormationBundle\Entity\Ecole", inversedBy="villes")
-     * @ORM\JoinTable(name="villes_ecoles")
+     * @ORM\JoinTable(name="ville_ecole")
      */
     private $ecoles;
 
