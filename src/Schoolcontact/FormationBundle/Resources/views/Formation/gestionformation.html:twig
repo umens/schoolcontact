@@ -55,10 +55,10 @@
               <li>
                 <a href="{{ path('gestionusers') }}">Users</a>
               </li>
-              <li class="active">
+              <li>
                 <a href="{{ path('gestionecole') }}">Ecoles</a>
               </li>
-              <li>
+              <li class="active">
                 <a href="{{ path('gestionformation') }}">Formations</a>
               </li>
             </ul>
@@ -173,13 +173,25 @@
               <form action="" method="post" {{ form_enctype(form) }}>
                  {{ form_errors(form) }}
                   <div class="control-group">
-                    <label class="control-label" for="inputName">Nom de l'école</label>
+                    <label class="control-label" for="inputName">Nom</label>
                     <div class="controls">
-                      {{ form_row(form.name) }}
+                      {{ form_row(form.nom) }}
                     </div>
                   </div>
                   <div class="control-group">
-                    <label class="control-label" for="inputResponsable">Nom du responsable</label>
+                    <label class="control-label" for="inputResponsable">Type</label>
+                    <div class="controls">
+                      {{ form_row(form.type) }}
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="inputResponsable">Durée</label>
+                    <div class="controls">
+                      {{ form_row(form.duree) }}
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="inputResponsable">Description</label>
                     <div class="controls">
                       {{ form_row(form.description) }}
                     </div>

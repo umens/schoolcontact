@@ -3,7 +3,6 @@
 {% block title %}Gestion{% endblock %}
 
 {% block body %}
-
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -42,46 +41,7 @@
         </p>
         <p></p>
       </div>
-<div id="deposer" class="deposer">  
-      <div>              
-          <a href="#close" title="Close" class="close">X</a>                 
-          <form class="form-horizontal">
-              <div class="heading" style="margin-left : 30px;">
-                <h2 class="form-heading">Déposer un avis</h2>
-              </div>
-              <div class="pointille"></div>
-              <div class="control-group">
-                <label class="control-label" style="width:110px" for="inputName">Nom de l'école</label>
-                <div class="controls">
-                  <div class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Selection <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="nav-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-              </div>
-                </div>
-              </div>
-              <div class="control-group">
-                <label class="control-label" style="width:110px" for="inputResponsable">Votre Avis</label>
-                <div class="controls">
-                  <textarea name="comments" rows="7" cols="30" required placeholder="vorte avis..."></textarea>
-                </div>
-              </div>
-              <div class="control-group">
-                <button type="submit" style="float:right"class="btn btn-primary">Déposer</button>
-              </div>
-              
-              
-            </form> 
-        
-      </div>
-    </div>
+
       <!-- Example row of columns -->
       <div class="box-gestion">
         
@@ -89,60 +49,65 @@
           <div class="pointille"></div>
           <div>
             <ul class="menu-gestion">
-              <li class="active">
+              <li>
                 <a href="{{ path('schoolcontact_gestion_homepage') }}">Avis</a>
               </li>
-              <li>
+              <li class="active">
                 <a href="{{ path('gestionusers') }}">Users</a>
               </li>
               <li>
-                <a href="{{ path('gestionecole') }}">Ecole</a>
+                <a href="{{ path('gestionecole') }}">Ecoles</a>
               </li>
               <li>
-                <a href="{{ path('gestionformation') }}">Formation</a>
+                <a href="{{ path('gestionformation') }}">Formations</a>
               </li>
             </ul>
           </div>
           <div class="vide"></div>
           <div class="well">
+              <a class="btn btn-primary" role="button" data-toggle="modal" href="#ajouter">Ajouter une école</a>
               <table class="table">
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
+                    <th>Nom Ecole</th>
+                    <th>Responsable</th>
+                    <th>Adresse</th>
+                    <th>Type</th>
                     <th style="width: 36px;"></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>1</td>
-                    <td>Mark</td>
-                    <td>Tompson</td>
-                    <td>the_mark7</td>
+                    <td>Sciences-U Lyon</td>
+                    <td>M.Bouiche</td>
+                    <td>Cours Albert Thomas</td>
+                    <td>Privé</td>
                     <td>
-                        <a href="user.html"><i class="icon-pencil"></i></a>
+                        <a href="#modifier" role="button" data-toggle="modal"><i class="icon-pencil"></i></a>
                         <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
                     </td>
                   </tr>
                   <tr>
                     <td>2</td>
-                    <td>Ashley</td>
-                    <td>Jacobs</td>
-                    <td>ash11927</td>
+                    <td>ESC Commerce</td>
+                    <td>M.Blabla</td>
+                    <td>rue des paumés</td>
+                    <td>Privé</td>
                     <td>
-                        <a href="user.html"><i class="icon-pencil"></i></a>
+                        <a href="#modifier" role="button" data-toggle="modal"><i class="icon-pencil"></i></a>
                         <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
                     </td>
                   </tr>
                   <tr>
                     <td>3</td>
-                    <td>Audrey</td>
-                    <td>Ann</td>
-                    <td>audann84</td>
+                    <td>HEC Paris</td>
+                    <td>Mme Tronche</td>
+                    <td>rue des boulets</td>
+                    <td>Privé</td>
                     <td>
-                        <a href="user.html"><i class="icon-pencil"></i></a>
+                        <a href="#modifier" role="button" data-toggle="modal"><i class="icon-pencil"></i></a>
                         <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
                     </td>
                   </tr>
@@ -160,17 +125,90 @@
                   <li><a href="#">Next</a></li>
               </ul>
           </div>
+          <div class="modal small hide fade" id="modifier" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h3 id="myModalLabel">Modification</h3>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label" for="inputName">Nom de l'école</label>
+                <div class="controls">
+                  <input type="text" id="inputName" required placeholder="Sciences-U Lyon">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="inputResponsable">Nom du responsable</label>
+                <div class="controls">
+                  <input type="text" id="inputResponsable" required placeholder="M. Poireaux">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="inputAdresse">Adresse</label>
+                <div class="controls">
+                  <input type="text" id="inputAdresse" required placeholder="32, rue des glandeurs">
+                </div>
+                <label class="control-label" for="inputCP">C.P</label>
+                <div class="controls">
+                  <input type="text" id="inputCP" required placeholder="69003">
+                </div>
+                <label class="control-label" for="inputVille">Ville</label>
+                <div class="controls">
+                  <input type="text" id="inputVille" required placeholder="Lyon">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="inputEmail">Email</label>
+                <div class="controls">
+                  <input type="text" id="inputEmail" required placeholder="toto@gmail.com">
+                </div>
+              </div>
+              <button class="btn btn-primary" data-dismiss="modal">Modifier</button>
+          </div>
+          <div class="modal small hide fade" id="ajouter" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h3 id="myModalLabel">Ajout</h3>
+              </div>
+              <form action="" method="post" {{ form_enctype(form) }}>
+                 {{ form_errors(form) }}
+                  <div class="control-group">
+                    <label class="control-label" for="inputName">Nom de l'école</label>
+                    <div class="controls">
+                      {{ form_row(form.name) }}
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="inputResponsable">Nom du responsable</label>
+                    <div class="controls">
+                      {{ form_row(form.description) }}
+                    </div>
+                  </div>
+                  <!--
+                  <div class="control-group">
+                    <label class="control-label" for="inputAdresse">Adresse</label>
+                    <div class="controls">
+    
+                    </div>
+                    <label class="control-label" for="inputCP">C.P</label>
+                    <div class="controls">
+                      
+                    </div>-->
+                  {{ form_rest(form) }}
+              <input class="btn btn-primary" value="Ajouter" type="submit" />
+              </form>
+          </div>
           <div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                  <h3 id="myModalLabel">Delete Confirmation</h3>
+                  <h3 id="myModalLabel">Confirmation</h3>
               </div>
               <div class="modal-body">
-                  <p class="error-text">Are you sure you want to delete the user?</p>
+                  <p class="error-text">Etes-vous certain de vouloir supprimer cette école?</p>
               </div>
               <div class="modal-footer">
                   <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-                  <button class="btn btn-danger" data-dismiss="modal">Delete</button>
+                  <button class="btn btn-danger" data-dismiss="modal">Supprimer</button>
               </div>
           </div>
           </div>

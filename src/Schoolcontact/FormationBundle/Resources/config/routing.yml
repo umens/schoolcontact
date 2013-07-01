@@ -13,6 +13,12 @@ schoolcontact_gestion_homepage:
 gestionecole:
     pattern:  /gestion/ecole
     defaults: { _controller: SchoolcontactFormationBundle:Formation:gestionecole }
+gestionusers:
+    pattern:  /gestion/users
+    defaults: { _controller: SchoolcontactFormationBundle:Formation:gestionusers }
+gestionformation:
+    pattern:  /gestion/formation
+    defaults: { _controller: SchoolcontactFormationBundle:Formation:gestionformation }
 schoolcontact_inscription_ecole:
     pattern:  /inscriptionEcole
     defaults: { _controller: SchoolcontactFormationBundle:Formation:inscriptionecole }
