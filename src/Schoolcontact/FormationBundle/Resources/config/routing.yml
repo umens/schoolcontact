@@ -28,3 +28,6 @@ monCompte:
 contact:
     pattern:  /contact
     defaults: { _controller: SchoolcontactFormationBundle:Formation:contact }
+accueil:
+    pattern:  /accueil
+    defaults: { _controller: SchoolcontactFormationBundle:Formation:accueil }

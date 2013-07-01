@@ -29,6 +29,10 @@ class FormationController extends Controller
     {
         return $this->render('SchoolcontactFormationBundle:Formation:messagerie.html.twig');
     }
+    public function accueilAction()
+    {
+        return $this->render('SchoolcontactFormationBundle:Formation:accueil.html.twig');
+    }
     public function gestionAction()
     {
         return $this->render('SchoolcontactFormationBundle:Formation:gestion.html.twig');
