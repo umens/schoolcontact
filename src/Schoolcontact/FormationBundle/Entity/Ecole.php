@@ -4,6 +4,7 @@ namespace Schoolcontact\FormationBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Schoolcontact\FormationBundle\Entity\Formation;
 
 /**
  * Ecole
@@ -55,10 +56,15 @@ class Ecole
      */
     private $villes;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Schoolcontact\FormationBundle\Entity\Formation", mappedBy="ecole")
+     */
+    private $formations;
+
     public function __construct() {
         $this->villes = new ArrayCollection();
+        $this->formations = new ArrayCollection();
     }
-
 
     /**
      * Get id
@@ -160,5 +166,37 @@ class Ecole
     public function getStatus()
     {
         return $this->status;
+    }
+
+    /**
+     * add formation
+     *
+     * @return ArrayCollection 
+     */
+    public function addFormation(Formation $formation)
+    {
+        $this->formations[] = $formation;
+        $formation->setEcole($this);
+        return $this;
+    }
+
+    /**
+     * remove formation
+     */ 
+    public function removeFormation(Formation $formation)
+    {
+        $this->formations->removeElement($formation);
+        // Et si notre relation était facultative (nullable=true, ce qui n'est pas notre cas ici attention) :        
+        // $formation->setDepartement(null);
+    }
+
+    /**
+     * Get formations
+     *
+     * @return ArrayCollection 
+     */ 
+    public function getFormations()
+    {
+        return $this->formations;
     }
 }
