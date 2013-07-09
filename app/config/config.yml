@@ -68,8 +68,6 @@ fos_user:
     db_driver:          orm
     firewall_name:      main
     user_class:         Schoolcontact\UserBundle\Entity\User
-    group:
-        group_class:    Schoolcontact\UserBundle\Entity\Group
     service:
         mailer:         fos_user.mailer.twig_swift
     from_email:

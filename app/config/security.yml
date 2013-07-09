@@ -56,4 +56,5 @@ security:
         - { path: ^/connexion$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/inscription, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/$, role: ROLE_USER }
         - { path: ^/admin/, role: ROLE_ADMIN }
