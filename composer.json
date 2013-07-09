@@ -20,7 +20,7 @@
         "sensio/generator-bundle": "2.3.*",
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/user-bundle": "*",
-        "friendsofsymfony/facebook-bundle": "*"
+        "hwi/oauth-bundle": "0.3.*@dev"
     },
     "scripts": {
         "post-install-cmd": [

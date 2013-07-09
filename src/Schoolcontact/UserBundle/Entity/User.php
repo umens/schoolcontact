@@ -4,6 +4,7 @@ namespace Schoolcontact\UserBundle\Entity;
 
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
@@ -19,50 +20,79 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Schoolcontact\UserBundle\Entity\Group")
-     * @ORM\JoinTable(name="utilisateur_groupe",
-     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
-     * )
-     */
-    protected $groups;
-
-    /**
      * @var string
      *
-     * @ORM\Column(name="firstname", type="string", length=255)
+     * @ORM\Column(name="firstname", type="string", length=255, nullable=true)
      */
     protected $firstname;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="lastname", type="string", length=255)
+     * @ORM\Column(name="lastname", type="string", length=255, nullable=true)
      */
     protected $lastname;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="facebookId", type="string", length=255)
+     * @ORM\Column(name="facebook_id", type="string", length=255, nullable=true) 
      */
-    protected $facebookId;
+    protected $facebook_id;
+ 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="facebook_access_token", type="string", length=255, nullable=true) 
+     */
+    protected $facebook_access_token;
+ 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="twitter_id", type="string", length=255, nullable=true) 
+     */
+    protected $twitter_id;
+
+        /**
+     * @var string
+     *
+     * @ORM\Column(name="twitter_access_token", type="string", length=255, nullable=true) 
+     */
+    protected $twitter_access_token;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="picture", type="string", length=255, nullable=true) 
+     */
+    protected $picture;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="gender", type="string", length=255, nullable=true) 
+     */
+    protected $gender;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="location", type="string", length=255, nullable=true) 
+     */
+    protected $location;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="birthday", type="string", length=255, nullable=true) 
+     */
+    protected $birthday;
 
     public function __construct()
     {
         parent::__construct();
         // your own logic
-    }
-
-    public function serialize()
-    {
-        return serialize(array($this->facebookId, parent::serialize()));
-    }
-
-    public function unserialize($data)
-    {
-        list($this->facebookId, $parentData) = unserialize($data);
-        parent::unserialize($parentData);
     }
 
     /**
@@ -107,40 +137,196 @@ class User extends BaseUser
     }
 
     /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set facebook_id
+     *
      * @param string $facebookId
-     * @return void
+     * @return User
      */
     public function setFacebookId($facebookId)
     {
-        $this->facebookId = $facebookId;
-        $this->setUsername($facebookId);
+        $this->facebook_id = $facebookId;
+    
+        return $this;
     }
 
     /**
-     * @return string
+     * Get facebook_id
+     *
+     * @return string 
      */
     public function getFacebookId()
     {
-        return $this->facebookId;
+        return $this->facebook_id;
     }
 
     /**
-     * @param Array
+     * Set facebook_access_token
+     *
+     * @param string $facebookAccessToken
+     * @return User
      */
-    public function setFBData($fbdata)
+    public function setFacebookAccessToken($facebookAccessToken)
     {
-        if (isset($fbdata['id'])) {
-            $this->setFacebookId($fbdata['id']);
-            $this->addRole('ROLE_FACEBOOK');
-        }
-        if (isset($fbdata['first_name'])) {
-            $this->setFirstname($fbdata['first_name']);
-        }
-        if (isset($fbdata['last_name'])) {
-            $this->setLastname($fbdata['last_name']);
-        }
-        if (isset($fbdata['email'])) {
-            $this->setEmail($fbdata['email']);
-        }
+        $this->facebook_access_token = $facebookAccessToken;
+    
+        return $this;
+    }
+
+    /**
+     * Get facebook_access_token
+     *
+     * @return string 
+     */
+    public function getFacebookAccessToken()
+    {
+        return $this->facebook_access_token;
+    }
+
+    /**
+     * Set twitter_id
+     *
+     * @param string $twitterId
+     * @return User
+     */
+    public function setTwitterId($twitterId)
+    {
+        $this->twitter_id = $twitterId;
+    
+        return $this;
+    }
+
+    /**
+     * Get twitter_id
+     *
+     * @return string 
+     */
+    public function getTwitterId()
+    {
+        return $this->twitter_id;
+    }
+
+    /**
+     * Set twitter_access_token
+     *
+     * @param string $twitterAccessToken
+     * @return User
+     */
+    public function setTwitterAccessToken($twitterAccessToken)
+    {
+        $this->twitter_access_token = $twitterAccessToken;
+    
+        return $this;
+    }
+
+    /**
+     * Get twitter_access_token
+     *
+     * @return string 
+     */
+    public function getTwitterAccessToken()
+    {
+        return $this->twitter_access_token;
+    }
+
+    /**
+     * Set picture
+     *
+     * @param string $picture
+     * @return User
+     */
+    public function setPicture($picture)
+    {
+        $this->picture = $picture;
+    
+        return $this;
+    }
+
+    /**
+     * Get picture
+     *
+     * @return string 
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * Set gender
+     *
+     * @param string $gender
+     * @return User
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+    
+        return $this;
+    }
+
+    /**
+     * Get gender
+     *
+     * @return string 
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
+
+    /**
+     * Set location
+     *
+     * @param string $location
+     * @return User
+     */
+    public function setLocation($location)
+    {
+        $this->location = $location;
+    
+        return $this;
+    }
+
+    /**
+     * Get location
+     *
+     * @return string 
+     */
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
+    /**
+     * Set birthday
+     *
+     * @param string $birthday
+     * @return User
+     */
+    public function setBirthday($birthday)
+    {
+        $this->birthday = $birthday;
+    
+        return $this;
+    }
+
+    /**
+     * Get birthday
+     *
+     * @return string 
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
     }
 }

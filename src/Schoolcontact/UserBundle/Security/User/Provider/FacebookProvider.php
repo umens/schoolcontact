@@ -6,9 +6,8 @@ use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
-use Facebook;
+
 use \BaseFacebook;
-use \FacebookApiException;
 
 class FacebookProvider implements UserProviderInterface
 {
@@ -26,8 +25,8 @@ class FacebookProvider implements UserProviderInterface
         $this->validator = $validator;
 
         // Add this to not have the error "the ssl certificate is invalid."
-        Facebook::$CURL_OPTS[CURLOPT_SSL_VERIFYPEER] = false;
-        Facebook::$CURL_OPTS[CURLOPT_SSL_VERIFYHOST] = 2;
+        //Facebook::$CURL_OPTS[CURLOPT_SSL_VERIFYPEER] = false;
+        //Facebook::$CURL_OPTS[CURLOPT_SSL_VERIFYHOST] = 2;
     }
 
     public function supportsClass($class)
@@ -38,11 +37,6 @@ class FacebookProvider implements UserProviderInterface
     public function findUserByFbId($fbId)
     {
         return $this->userManager->findUserBy(array('facebookId' => $fbId));
-    }
-
-    public function findUserByUsername($username)
-    {
-        return $this->userManager->findUserBy(array('username' => $username));
     }
 
     public function connectExistingAccount()
@@ -97,41 +91,35 @@ class FacebookProvider implements UserProviderInterface
         }
 
         if (!empty($fbdata)) {
-            if (empty($user)) {
+
+            $user_by_mail = $this->userManager->findUserBy(array('email' => $fbdata['email']));
+
+            if (!empty($user_by_mail))
+                $user = $user_by_mail;
+            elseif (empty($user)) {
                 $user = $this->userManager->createUser();
                 $user->setEnabled(true);
                 $user->setPassword('');
             }
 
-            if($user->getUsername() == '' || $user->getUsername() == null)
-            {
-                $user->setUsername($username . '@facebook.com');
-            }
-
             $user->setFBData($fbdata);
 
-            if (count($this->validator->validate($user, 'Facebook'))) {
-                // TODO: the user was found obviously, but doesnt match our expectations, do something smart
+            if (count($this->validator->validate($user, 'Facebook')))
                 throw new UsernameNotFoundException('The facebook user could not be stored');
-            }
+
             $this->userManager->updateUser($user);
         }
 
-        if (empty($user)) {
-
-            // TODO: the user was found obviously, but doesnt match our expectations, do something smart
-            throw new UsernameNotFoundException('The facebook user could not be stored');
-
-        }
+        if (empty($user))
+            throw new UsernameNotFoundException('The user is not authenticated on facebook');
 
         return $user;
     }
 
     public function refreshUser(UserInterface $user)
     {
-        if (!$this->supportsClass(get_class($user)) || !$user->getFacebookId()) {
+        if (!$this->supportsClass(get_class($user)) || !$user->getFacebookId())
             throw new UnsupportedUserException(sprintf('Instances of "%s" are not supported.', get_class($user)));
-        }
 
         return $this->loadUserByUsername($user->getFacebookId());
     }

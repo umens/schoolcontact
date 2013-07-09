@@ -15,3 +15,14 @@ Si vous avez des erreurs, essayez ces deux commandes a la suite après avoir sup
 php composer.phar install --no-scripts
 php vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/bin/build_bootstrap.php
 ```
+=============
+
+Pour créer la base de données :
+```php
+php app/console doctrine:create:database
+```
+
+Ensuite, pour créer les tables :
+```php
+php app/console doctrine:schema:update --force
+```

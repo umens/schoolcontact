@@ -2,6 +2,53 @@
 
 {% block body %}
 
+    <script type="text/javascript">
+        window.fbAsyncInit = function() {
+            // init the FB JS SDK
+            FB.init({
+                appId      : '261648877311458',                        // App ID from the app dashboard
+                channelUrl : '//yourdomain.com/channel.html',      // Channel file for x-domain comms
+                status     : true,                                 // Check Facebook Login status
+                xfbml      : true                                  // Look for social plugins on the page
+            });
+        };
+
+        // Load the SDK asynchronously
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/fr_FR/all.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        function fb_login() {
+            FB.getLoginStatus(function(response) {
+                if (response.status === 'connected') {
+                    // connected
+                    console.log('Already connected, redirect to login page to create token.');
+                    document.location = "{{ url("hwi_oauth_service_redirect", {service: "facebook"}) }}";
+                } else {
+                    // not_authorized
+                    FB.login(function(response) {
+                        if (response.authResponse) {
+                            document.location = "{{ url("hwi_oauth_service_redirect", {service: "facebook"}) }}";
+                        } else {
+                            console.log('Cancelled.');
+                        }
+                    });
+                }
+            });
+            return false;
+        }
+
+        function twitter_login() {
+            document.location = "{{ url("hwi_oauth_service_redirect", {service: "twitter"}) }}";
+            return false;
+        }
+        
+    </script>
+    
     {% for type, messages in app.session.flashbag.all() %}
         {% for key, message in messages %}
             <div class="flash-{{ type }}">
@@ -16,9 +63,10 @@
             {% if app.user.firstname is null and app.user.lastname is null %}
                 {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
             {% else %}
-                {{ 'layout.logged_in_as'|trans({'%username%': [app.user.firstname, app.user.lastname]|join(' ') }, 'FOSUserBundle') }} |
+                {{ 'layout.logged_in_as'|trans({'%username%': [app.user.firstname, app.user.lastname]|join(' ') }, 'FOSUserBundle') }} | 
             {% endif %}
 
+            <img src="{{ app.user.picture }}" alt="Image de profil" /> | 
             
             <a href="{{ path('fos_user_security_logout') }}">
                 {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
@@ -29,11 +77,19 @@
                 {% block fos_user_content %}
                 {% endblock fos_user_content %}
             </div>
+            <div id="social-login">
+                <p>
+                    <a class="btn-auth btn-facebook" href="#" onclick="fb_login();">Se connecter avec <b>Facebook</b></a>
+                </p>
 
-            <div id="facebook_login">
-                {{ facebook_login_button({'autologoutlink': true, 'size': 'large'}) }}
+                <p>
+                    <a class="btn-auth btn-twitter" href="#" onclick="twitter_login();">Se connecter avec <b>Twitter</b></a>
+                </p>
+
+                {# Bonus: Show all available login link in HWIOAuthBundle #}
+                {# {% render(controller('HWIOAuthBundle:Connect:connect')) %} #}
             </div>
         {% endif %}
     </div>
-
+    <div id="fb-root"></div>
 {% endblock %}

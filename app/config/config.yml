@@ -65,36 +65,58 @@ swiftmailer:
     spool:     { type: memory }
 
 fos_user:
-    db_driver: orm
-    firewall_name: main
-    user_class: Schoolcontact\UserBundle\Entity\User
+    db_driver:          orm
+    firewall_name:      main
+    user_class:         Schoolcontact\UserBundle\Entity\User
     group:
-        group_class: Schoolcontact\UserBundle\Entity\Group
+        group_class:    Schoolcontact\UserBundle\Entity\Group
     service:
-        mailer: fos_user.mailer.twig_swift
+        mailer:         fos_user.mailer.twig_swift
     from_email:
         address:        theminirider@gmail.com
         sender_name:    School Contact
     registration:
         confirmation:
             enabled:    true
-            template: SchoolcontactUserBundle:User:registration.email.twig
+            template:   SchoolcontactUserBundle:User:registration.email.twig
     resetting:
         email:
-            template: SchoolcontactUserBundle:User:resetting.email.twig
+            template:   SchoolcontactUserBundle:User:resetting.email.twig
 
-fos_facebook:
-    alias:  facebook
-    app_id: %api_facebook_id%
-    secret: %api_facebook_secret%
-    cookie: true
-    permissions: [email, user_birthday, user_location]
-    culture: fr_FR
-
-services:
-    my.facebook.user:
-        class: Schoolcontact\UserBundle\Security\User\Provider\FacebookProvider
-        arguments:
-            facebook: "@fos_facebook.api"
-            userManager: "@fos_user.user_manager"
-            validator: "@validator"
+hwi_oauth:
+    #this is my custom user provider, created from FOSUBUserProvider - will manage the 
+    #automatic user registration on your site, with data from the provider (facebook. google, etc.)
+    #and also, the connecting part (get the token and the user_id)
+    connect:
+        account_connector: my_user_provider
+    # name of the firewall in which this bundle is active, this setting MUST be set
+    firewall_name: main
+    fosub:
+        username_iterations: 30
+        properties:
+            # these properties will be used/redefined later in the custom FOSUBUserProvider service.
+            facebook: facebook_id
+            twitter: twitter_id
+    resource_owners:
+        facebook:
+            type:                facebook
+            client_id:           %api_facebook_id%
+            client_secret:       %api_facebook_secret%
+            scope:               "email,user_birthday,user_location"
+            options:
+                display:         popup #dialog is optimized for popup window
+            infos_url:           "https://graph.facebook.com/me?fields=id,first_name,last_name,gender,picture.type(normal),location,birthday,email,name&locale=fr_FR"
+            paths:
+                email:          email
+                realname:       name
+                profilepicture: picture.data.url
+                
+        twitter:
+            type:                twitter
+            client_id:           %api_twitter_id%
+            client_secret:       %api_twitter_secret%
+            infos_url:           "https://api.twitter.com/1.1/account/verify_credentials.json"
+            paths:
+                realname:       name
+                profilepicture: profile_image_url_https
+        # here you will add one (or more) configurations for resource owners

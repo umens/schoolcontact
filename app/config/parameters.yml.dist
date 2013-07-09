@@ -1,10 +1,10 @@
 parameters:
     database_driver:   pdo_mysql
-    database_host:     127.0.0.1
+    database_host:     localhost
     database_port:     ~
     database_name:     schoolcontact
-    database_user:     root
-    database_password: ~
+    database_user:     your_database_username
+    database_password: your_database_password
 
     mailer_transport: gmail
     mailer_host:      ~
@@ -14,7 +14,7 @@ parameters:
     locale:            fr
     secret:            b2df3e719ea54c7a7deeab5d12368d09
 
-    api_facebook_id:      261648877311458 # ID de l’application/Clé de l’API
-    api_facebook_secret:  b43b5b0a13af03b4a14db1d2ab6210f3 # Clé secrète
-    api_facebook_name:    http://apps.facebook.com/school-contact/ # App Namespace
-    api_facebook_server:  http://localhost/schoolcontact/web/app_dev.php/ # URL du site
+    api_facebook_id: '261648877311458'
+    api_facebook_secret: b43b5b0a13af03b4a14db1d2ab6210f3
+    api_twitter_id: o2FE5jlMx6rJEzqXcBGA
+    api_twitter_secret: b43b5b0a13af03b4a14db1d2ab6210f3

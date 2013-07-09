@@ -9,6 +9,7 @@ vendor/*
 */cache/*
 web/uploads/*
 web/bundles/*
+bin/*
 
 # Configuration files
 app/config/parameters.ini
@@ -22,3 +23,7 @@ sftp-config.json
 
 # System
 .DS_Store
+
+#backup files
+*~
+*bak

@@ -1,3 +1,4 @@
+#FosUserBundle Routes
 fos_user_security:
     resource: "routing/security.yml"
 
@@ -21,8 +22,21 @@ fos_user_group:
     resource: "routing/group.yml"
     prefix: /groupe
 
-facebook_security_check:
-    pattern:  /facebook-connexion-check
+#HWIOAuthBundle routes
+hwi_oauth_security:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix: /connexion
 
-facebook_security_logout:
-    pattern:  /facebook-logout
+hwi_oauth_connect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+    prefix: /connexion
+
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /connexion
+
+facebook_login:
+    pattern: /connexion/check-facebook
+
+twitter_login:
+    pattern: /connexion/check-twitter

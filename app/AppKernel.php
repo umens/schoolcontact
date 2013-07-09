@@ -19,7 +19,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Schoolcontact\UserBundle\SchoolcontactUserBundle(),
             new Schoolcontact\FormationBundle\SchoolcontactFormationBundle(),
-            new FOS\FacebookBundle\FOSFacebookBundle(),
+            new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
