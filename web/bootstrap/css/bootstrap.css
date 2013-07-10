@@ -37,6 +37,12 @@ width:30%;
 float:left;
 width:30%;
 }
+.publicite{
+  float:right;
+  width:550px;
+  margin-top: -125px;
+}
+
 .rating {
       font-size: 25px;
     }
