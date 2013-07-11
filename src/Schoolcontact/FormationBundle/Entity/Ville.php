@@ -31,6 +31,13 @@ class Ville
     private $nom;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="slug", type="string", length=255)
+     */
+    private $slug;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="cp", type="integer")

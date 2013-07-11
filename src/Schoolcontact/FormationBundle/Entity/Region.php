@@ -31,6 +31,13 @@ class Region
     private $name;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="slug", type="string", length=255)
+     */
+    private $slug;
+
+    /**
      * @ORM\OneToMany(targetEntity="Schoolcontact\FormationBundle\Entity\Departement", mappedBy="region")
      */
     private $departements;

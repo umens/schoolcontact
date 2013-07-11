@@ -32,6 +32,13 @@ class Departement
     private $name;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="slug", type="string", length=255)
+     */
+    private $slug;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="code", type="integer")
