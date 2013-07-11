@@ -39,9 +39,9 @@ class Departement
     private $slug;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="code", type="integer")
+     * @ORM\Column(name="code", type="string", length=3)
      */
     private $code;
 

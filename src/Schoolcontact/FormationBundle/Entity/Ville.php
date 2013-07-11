@@ -38,9 +38,9 @@ class Ville
     private $slug;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="cp", type="integer")
+     * @ORM\Column(name="cp", type="string", length=50)
      */
     private $cp;
 
