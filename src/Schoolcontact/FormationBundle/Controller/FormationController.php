@@ -48,6 +48,16 @@ class FormationController extends Controller
     
     }
 
+    public function listFormationAction(){
+
+        $repository = $this->getDoctrine()->getManager()->getRepository('SchoolcontactFormationBundle:Formation');
+
+        $formations = $repository->findAll();
+        
+        return $this->render('SchoolcontactFormationBundle:Formation:viewFormation.html.twig', array('formation' => $formation));
+    
+    }
+
     public function viewFormationAction($id){
 
         $repository = $this->getDoctrine()->getManager()->getRepository('SchoolcontactFormationBundle:Formation');
@@ -59,6 +69,61 @@ class FormationController extends Controller
     }
 
 
+    /********** Actions de Recherche Formations ***********/
+
+    public function listFormationRegionAction(Region $region){
+
+        $repository = $this->getDoctrine()->getManager()->getRepository('SchoolcontactFormationBundle:Formation');
+
+        $formations = $repository->findBy(array('region' => $region));
+        
+        return $this->render('SchoolcontactFormationBundle:Formation:viewFormation.html.twig', array('formation' => $formation));
+    
+    }
+
+    public function listFormationDepartementAction(Departement $departement){
+
+        $repository = $this->getDoctrine()->getManager()->getRepository('SchoolcontactFormationBundle:Formation');
+
+        $formations = $repository->findBy(array('departement' => $departement));
+        
+        return $this->render('SchoolcontactFormationBundle:Formation:viewFormation.html.twig', array('formation' => $formation));
+    
+    }
+
+    public function listFormationVilleAction(Ville $ville){
+
+        $repository = $this->getDoctrine()->getManager()->getRepository('SchoolcontactFormationBundle:Formation');
+
+        $formations = $repository->findBy(array('ville' => $ville));
+        
+        return $this->render('SchoolcontactFormationBundle:Formation:viewFormation.html.twig', array('formation' => $formation));
+    
+    }
+
+    public function listFormationEcoleAction(Ecole $ecole){
+
+        $repository = $this->getDoctrine()->getManager()->getRepository('SchoolcontactFormationBundle:Formation');
+
+        $formations = $repository->findBy(array('ecole' => $ecole));
+        
+        return $this->render('SchoolcontactFormationBundle:Formation:viewFormation.html.twig', array('formation' => $formation));
+    
+    }
+
+    public function listFormationRechercheAction(Region $c, Departement $departement, Ville $ville, Ecole $ecole){
+
+        $repository = $this->getDoctrine()->getManager()->getRepository('SchoolcontactFormationBundle:Formation');
+
+        $recherche = array();
+        if( isset($region) AND $region)
+
+
+        $formations = $repository->findAll();
+        
+        return $this->render('SchoolcontactFormationBundle:Formation:viewFormation.html.twig', array('formation' => $formation));
+    
+    }
 
 
 
