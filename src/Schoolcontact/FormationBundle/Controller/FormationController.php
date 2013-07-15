@@ -75,7 +75,7 @@ class FormationController extends Controller
 
         $repository = $this->getDoctrine()->getManager()->getRepository('SchoolcontactFormationBundle:Formation');
 
-        $formations = $repository->findBy(array('region' => $region));
+        $formations = $repository->findBy(array('region_id' => $region->getId()));
         
         return $this->render('SchoolcontactFormationBundle:Formation:viewFormation.html.twig', array('formation' => $formation));
     

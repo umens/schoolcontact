@@ -1,6 +1,22 @@
 schoolcontact_formation_homepage:
     pattern:  /
     defaults: { _controller: SchoolcontactFormationBundle:Formation:index }
+
+
+schoolcontact_formation_geographique_region:
+    pattern: /region/{slug}
+    defaults: { _controller: SchoolcontactFormationBundle:Formation:listFormationRegion }
+
+schoolcontact_formation_geographique_departement:
+    pattern: /departement/{slug}
+    defaults: { _controller: SchoolcontactFormationBundle:Formation:listFormationDepartement }
+
+schoolcontact_formation_all:
+    pattern: /all-formations
+    defaults: { _controller: SchoolcontactFormationBundle:Formation:listFormation }
+
+
+
 schoolcontact_connecte_homepage:
     pattern:  /consulter
     defaults: { _controller: SchoolcontactFormationBundle:Formation:consulter }
