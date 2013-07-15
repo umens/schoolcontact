@@ -231,4 +231,8 @@ class FormationController extends Controller
     {
         return $this->render('SchoolcontactFormationBundle:Formation:contact.html.twig');
     }
+    public function visiteAction()
+    {
+        return $this->render('SchoolcontactFormationBundle:Formation:visite.html.twig');
+    }
 }

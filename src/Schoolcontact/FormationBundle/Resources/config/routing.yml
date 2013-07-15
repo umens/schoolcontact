@@ -47,3 +47,6 @@ contact:
 accueil:
     pattern:  /accueil
     defaults: { _controller: SchoolcontactFormationBundle:Formation:accueil }
+visite:
+    pattern:  /visite
+    defaults: { _controller: SchoolcontactFormationBundle:Formation:visite }
