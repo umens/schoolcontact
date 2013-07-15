@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "166437c25e0b344927f6b16f45b37fd8",
+    "hash": "ca4f3bbc80d9d958451391856f22013f",
     "packages": [
         {
             "name": "doctrine/common",
@@ -352,12 +352,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hwi/HWIOAuthBundle.git",
-                "reference": "0.3.0-alpha1"
+                "reference": "6b63b55c219933ba7a921bea479780d9f2d94ff9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hwi/HWIOAuthBundle/zipball/0.3.0-alpha1",
-                "reference": "0.3.0-alpha1",
+                "url": "https://api.github.com/repos/hwi/HWIOAuthBundle/zipball/6b63b55c219933ba7a921bea479780d9f2d94ff9",
+                "reference": "6b63b55c219933ba7a921bea479780d9f2d94ff9",
                 "shasum": ""
             },
             "require": {
@@ -441,7 +441,7 @@
                 "yahoo",
                 "yandex"
             ],
-            "time": "2013-07-03 18:42:26"
+            "time": "2013-07-10 07:29:43"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -959,16 +959,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/AsseticBundle.git",
-                "reference": "v2.3.0"
+                "reference": "v2.3.0-beta1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/AsseticBundle/zipball/v2.3.0",
-                "reference": "v2.3.0",
+                "url": "https://api.github.com/repos/symfony/AsseticBundle/zipball/v2.3.0-beta1",
+                "reference": "v2.3.0-beta1",
                 "shasum": ""
             },
             "require": {
-                "kriswallsmith/assetic": ">=1.1,<2.0",
+                "kriswallsmith/assetic": ">=1.1-beta1,<1.2",
                 "php": ">=5.3.0",
                 "symfony/framework-bundle": ">=2.1,<3.0"
             },
@@ -1013,25 +1013,24 @@
                 "compression",
                 "minification"
             ],
-            "time": "2013-05-16 05:32:23"
+            "time": "2013-05-13 15:39:47"
         },
         {
             "name": "symfony/icu",
-            "version": "v1.2.0",
+            "version": "v1.0.0",
             "target-dir": "Symfony/Component/Icu",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Icu.git",
-                "reference": "v1.2.0"
+                "reference": "v1.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Icu/zipball/v1.2.0",
-                "reference": "v1.2.0",
+                "url": "https://api.github.com/repos/symfony/Icu/zipball/v1.0.0",
+                "reference": "v1.0.0",
                 "shasum": ""
             },
             "require": {
-                "lib-icu": ">=4.4",
                 "php": ">=5.3.3",
                 "symfony/intl": ">=2.3,<3.0"
             },
@@ -1061,7 +1060,7 @@
                 "icu",
                 "intl"
             ],
-            "time": "2013-06-03 18:32:58"
+            "time": "2013-06-03 18:32:07"
         },
         {
             "name": "symfony/monolog-bundle",
