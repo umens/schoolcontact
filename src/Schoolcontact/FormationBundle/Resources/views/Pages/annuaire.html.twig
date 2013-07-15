@@ -1,0 +1,123 @@
+{% extends 'SchoolcontactFormationBundle::layout.html.twig' %}
+
+{% block title %}Annuaire{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/annuaire.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/annuaire.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+<div id="annuaire" class="container">
+    <div class="tabbable"> <!-- Only required for left/right tabs -->
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#tab1" data-toggle="tab">Formations</a></li>
+        <li><a href="#tab2" data-toggle="tab">Etablissements</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="tab1">
+            <div class="leftNav">
+                <div class="tabcontent training">
+                    <h4>Recherchez parmi <strong>40 550 formations</strong> dans le supérieur</h4>
+
+                    <form action="/annuaire/moteur/submit" method="post">
+                        <input type="hidden" name="search_type" id="search_type" value="forma_sup">
+                        <input type="hidden" name="rub_url" id="rub_url" value="/etudes/annuaire-enseignement-superieur/formation">
+
+                        <fieldset class="select">
+                          <legend>Rechercher</legend>
+                            <div class="select-box">
+                                <label for="niveau-select" class="title diplome">Diplôme</label>
+                                <select id="niveau-select" name="niveau" classname="crawlable-selectbox-on">
+                                  <option value="">Choisissez un niveau d'études</option>
+                                  <option value="1">Après le bac ou un bac+1</option>
+                                  <option value="2">Après un bac+2</option>
+                                  <option value="3">Après un bac+3/4</option>
+                                </select>
+
+                                <div id="div_diplome" class="no-bg">
+                                  <select id="diplome" name="diplome"></select>
+                                </div>
+                            </div>
+
+                            <div class="select-box">
+                                <label for="domaine" class="title spe">Spécialité</label>
+                                <select id="domaine" name="domaine" classname="crawlable-selectbox-on">
+                                  <option value="">Choisissez un domaine</option>
+                                  <option value="1">arts, info-com, culture</option>
+                                  <option value="75">commerce, gestion, économie</option>
+                                  <option value="144">droit, administration, sc. politique</option>
+                                  <option value="355">lettres, langues, sc. humaines et sociales</option>
+                                  <option value="405">sciences et technologies, sport</option>
+                                  <option value="516">santé, soins</option>
+                                </select>
+
+                                <div id="div_filiere" class="no-bg">
+                                    <select id="filiere" name="filiere"></select>
+                                </div>
+
+                                <div id="div_specialite" class="no-bg">
+                                    <select id="specialite" name="specialite"></select>
+                                </div>
+
+                                <div id="div_langue" class="no-bg">
+                                    <select id="langue" name="langue"></select>
+                                </div>
+                            </div>
+
+                            <div class="select-box">
+                              <label for="keros-region" class="title region">Région</label>
+                              <select id="region-select" name="region" classname="crawlable-selectbox-on">
+                                <option value="">Choisissez une région</option>
+                                <option value="1">Alsace</option>
+                              </select>                       
+
+                              <select name="departement" id="departement-select" style="">                     
+                                <option value="">Choisissez un département</option>
+                                <option value="1">01 - Ain</option>
+                              </select>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="keywords">
+                          <legend>Rechercher par mots-clés</legend>
+                          <div id="keywords-search">
+                            <label for="keros-kwords">Et/ou saisir un ou plusieurs mots-clés</label>
+                            <input type="text" name="critere" id="keros-kwords" value=" Nom de la formation" size="40">
+                          </div>
+
+                          <div id="scolarite" name="scolarite" classname="crawlable-selectbox-on">
+                            <input id="scolarite_0" type="checkbox" name="scolarite[]" value="1">
+                            <label for="scolarite_0">Contrat d'apprentissage</label>
+                            <input id="scolarite_1" type="checkbox" name="scolarite[]" value="2">
+                            <label for="scolarite_1">Contrat de professionnalisation</label>
+                          </div>           
+                        </fieldset>
+
+                        <span id="message" style="display: none">Attention au moins un critère est obligatoire</span>
+
+                        <button id="bt-submit-search" class="btn btn-submit" type="submit">
+                            <strong>Lancer la recherche</strong>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="rightNav">
+                Formations mises en avant
+            </div>
+
+            <div class="top-formation">
+                Top 10 des formations
+            </div>
+        </div>
+
+        <div class="tab-pane" id="tab2">
+          <p>Howdy, I'm in Section 2.</p>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}

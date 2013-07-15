@@ -1,0 +1,199 @@
+#annuaire {
+	background-color: #eee;
+	padding-top:50px;
+}
+
+#annuaire h4 {
+	margin:0px 0px 0px 50px;
+	padding:0;
+}
+
+div.leftNav {
+	width: 649px;
+	float: left;
+	margin: 0 16px 0 0;
+}
+
+div.leftNav fieldset legend {
+	display: none;
+}
+
+div.leftNav div.tabs {
+	position: relative;
+	height: 70px;
+	font-size: 1.1em;
+}
+
+div.leftNav div.tabs span {
+	display: block;
+	height: 36px;
+}
+
+div.leftNav div.tabs span a {
+	margin: 0 8px 0 15px;
+}
+
+div.leftNav div.tabs span a, div#keros div.leftNav div.tabs span strong {
+	float: left;
+	height: 36px;
+	font-weight: bold;
+	font-size: 1.2em;
+	line-height: 36px;
+	color: #666;
+	text-transform: uppercase;
+}
+
+div.leftNav div.tab-formation {
+	/*background: transparent url('/img/sc.map.png') 0 0 no-repeat;*/
+}
+
+/*div.leftNav div.training {
+	background: transparent url('/img/home.map.png') 0 0 no-repeat;
+}*/
+
+div.leftNav div.tabcontent {
+	margin: 0 0 16px 0;
+	/*border-width: 4px 4px 4px 4px;
+	border-color: #333;
+	border-style: solid;*/
+}
+
+div.leftNav div.training form fieldset.select {
+	padding: 20px 0 0 0;
+}
+
+div.leftNav div.training form fieldset select {
+	width:196px;
+}
+
+div.leftNav div.training form fieldset.select div.select-box {
+	height:150px;
+	width:200px;
+	padding-left: 5px;
+	margin-left:5px;
+	float:left;
+	background: rgb(255,179,53);
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmYjMzNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmYjlmMjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  rgba(255,179,53,1) 0%, rgba(251,159,39,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,179,53,1)), color-stop(100%,rgba(251,159,39,1)));
+	background: -webkit-linear-gradient(top,  rgba(255,179,53,1) 0%,rgba(251,159,39,1) 100%);
+	background: -o-linear-gradient(top,  rgba(255,179,53,1) 0%,rgba(251,159,39,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(255,179,53,1) 0%,rgba(251,159,39,1) 100%);
+	background: linear-gradient(to bottom,  rgba(255,179,53,1) 0%,rgba(251,159,39,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb335', endColorstr='#fb9f27',GradientType=0 );
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+div.leftNav div.training form fieldset.select div.select-box label.title {
+	color:#fff;
+	font-size: 17px;
+	font-weight: bold;
+
+}
+
+div.leftNav div.training form fieldset.select span {
+	float: left;
+	width: 202px;
+	margin: 0 0 0 10px;
+	line-height: 3em;
+	color: #fff;
+}
+
+div.leftNav div.training form fieldset.select span {
+	line-height: 3em;
+	color: #fff;
+}
+
+div.leftNav div.training form fieldset.select span label.diplome {
+	left: 92px;
+}
+
+div#annuaire div.training form fieldset.select span label.title {
+	position: absolute;
+	/*top: 0;*/
+	margin:-35px 0px 0px 65px;
+	font-size: 1.6em;
+	font-weight: bold;
+}
+
+div#annuaire div.training form fieldset.select span label.diplome {
+	margin:-35px 0px 0px 155px;
+}
+
+div.leftNav div.training form fieldset.select .no-bg {
+	display:none;
+}
+
+div.leftNav div.training form fieldset.keywords {
+	margin-bottom: 20px;
+}
+
+/*div.leftNav div.training form fieldset.keywords {
+	text-indent: 24px;
+	font-size: 1.1em;
+}*/
+
+#keywords-search {
+	height:20px;
+	width:595px;
+	padding:10px;
+	margin: 30px 0px 0px 10px;
+	background: rgb(226,226,226);
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2UyZTJlMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2RiZGJkYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iI2QxZDFkMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZWZlZmUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226,226,226,1)), color-stop(50%,rgba(219,219,219,1)), color-stop(51%,rgba(209,209,209,1)), color-stop(100%,rgba(254,254,254,1)));
+	background: -webkit-linear-gradient(top,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%);
+	background: -o-linear-gradient(top,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%);
+	background: linear-gradient(to bottom,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 );
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border:1px solid #999;
+}
+
+#keywords-search label, input {
+	float:left;
+}
+
+#keywords-search label {
+	font-size:13px;
+	font-weight: bold;
+}
+
+#keywords-search input {
+	width:320px;
+	margin:-6px 0px 0px 20px;
+}
+
+#message {
+
+}
+
+div.leftNav div.training form div#scolarite {
+	text-indent: 0px;
+	margin-top: 20px;
+	padding-left: 100px;
+}
+
+div.leftNav div.training form div#scolarite label {
+	width:250px;
+	margin-left: 25px;
+}
+
+div.rightNav {
+	float:left;
+}
+
+div.top-formation {
+	width:100%;
+	float:left;
+}
+
+#bt-submit-search {
+	margin-left: 200px;
+}

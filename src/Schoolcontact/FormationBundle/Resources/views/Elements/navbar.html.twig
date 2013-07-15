@@ -1,0 +1,81 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="brand" href="#">
+        <img id="logo" src="/img/logo-navbar.png" alt="logo"/>
+      </a>
+      
+      <div class="nav-collapse collapse">
+        <div class="navbar-form pull-left">
+          <ul class="nav">
+            <li>
+              <a class="brand" href="#newsletter">Newsletter</a>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-form pull-right">
+          <ul class="nav">
+            <li>
+              <a href="{{ path('accueil') }}">
+                <img id="img-accueil" src="/img/consulter-blanc.png" alt="Accueil"/>
+                Accueil
+              </a>
+            </li>
+            <li>
+              <a href="{{ path('monCompte') }}" >
+                <img id="img-compte" src="/img/deposer-blanc.png" alt="Mon compte"/>
+                Mon Compte
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<div id="newsletter" class="modalDialog">  
+  <div>              
+      <a href="#close" title="Close" class="close">X</a>                 
+      <form action="http://www.emailposte.com/form.php?id=1015&type=sub" method="post" name="frmSS" onSubmit="javascript: return CheckSS();">
+      <input type="hidden" name="mid" value="2903">
+      <table cellspacing="0" cellpadding="0">
+        <tr>
+          <td colspan="2"><h3><b>School Contact</b></h3></td>
+        </tr>
+          <tr>
+          <td width="40%"><font color="red"><b>*</b></font>&nbsp;Prénom:</td>
+          <td width="60%">
+            <input type="text" name="name" value="" size="30">
+                </td>
+        </tr>
+        <tr>
+          <td><font color="red"><b>*</b></font>&nbsp;Nom:</td>
+          <td>
+            <input type="text" name="surname" value="" size="30">
+                </td>
+        </tr>
+        <tr>
+          <td><font color="red"><b>*</b></font>&nbsp;Adresse Email:</td>
+          <td>
+            <input type="text" name="email" value="" size="30">
+                </td>
+        </tr>
+
+        <!--FORM COUNSTRUCTOR-->
+          <input type="hidden" name="SelectLists[3083]" value="YES">
+          <tr>
+          <td>&nbsp;</td>
+          <td>
+            <input type="submit" value="S abonner">
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

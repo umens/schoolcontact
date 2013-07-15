@@ -22,8 +22,6 @@ class FormationController extends Controller
 {
     public function indexAction(){
 
-        
-
         return $this->render('SchoolcontactFormationBundle:Formation:index.html.twig');
     
     }
@@ -132,31 +130,34 @@ class FormationController extends Controller
 
 
 
-
+    public function annuaireAction()
+    {
+        return $this->render('SchoolcontactFormationBundle:Pages:annuaire.html.twig');
+    }
 
     public function consulterAction()
     {
-        return $this->render('SchoolcontactFormationBundle:Formation:consulter.html.twig');
+        return $this->render('SchoolcontactFormationBundle:Pages:consulter.html.twig');
     }
 
     public function messagerieAction()
     {
-        return $this->render('SchoolcontactFormationBundle:Formation:messagerie.html.twig');
+        return $this->render('SchoolcontactFormationBundle:Pages:messagerie.html.twig');
     }
 
     public function accueilAction()
     {
-        return $this->render('SchoolcontactFormationBundle:Formation:accueil.html.twig');
+        return $this->render('SchoolcontactFormationBundle:Pages:accueil.html.twig');
     }
 
     public function gestionAction()
     {
-        return $this->render('SchoolcontactFormationBundle:Formation:gestion.html.twig');
+        return $this->render('SchoolcontactFormationBundle:Pages:gestion.html.twig');
     }
 
     public function inscriptionEcoleAction()
     {
-        return $this->render('SchoolcontactFormationBundle:Formation:inscriptionecole.html.twig');
+        return $this->render('SchoolcontactFormationBundle:Pages:inscriptionecole.html.twig');
     }
 
     public function gestionecoleAction(Request $request)
@@ -177,7 +178,7 @@ class FormationController extends Controller
                 $em->flush();
             }
         }
-        return $this->render('SchoolcontactFormationBundle:Formation:gestionecole.html.twig', array('form' => $form->createView()));
+        return $this->render('SchoolcontactFormationBundle:Pages:gestionecole.html.twig', array('form' => $form->createView()));
     }
 
     public function gestionusersAction()
@@ -198,7 +199,7 @@ class FormationController extends Controller
                 $em->flush();
             }
         }
-        return $this->render('SchoolcontactFormationBundle:Formation:gestionusers.html.twig', array('form' => $form->createView()));
+        return $this->render('SchoolcontactFormationBundle:Pages:gestionusers.html.twig', array('form' => $form->createView()));
     }
 
     public function gestionformationAction()
@@ -219,16 +220,20 @@ class FormationController extends Controller
                 $em->flush();
             }
         }
-        return $this->render('SchoolcontactFormationBundle:Formation:gestionformation.html.twig', array('form' => $form->createView()));
+        return $this->render('SchoolcontactFormationBundle:Pages:gestionformation.html.twig', array('form' => $form->createView()));
     }
 
     public function moncompteAction()
     {
-        return $this->render('SchoolcontactFormationBundle:Formation:monCompte.html.twig');
+        return $this->render('SchoolcontactFormationBundle:Pages:monCompte.html.twig');
     }
 
     public function contactAction()
     {
-        return $this->render('SchoolcontactFormationBundle:Formation:contact.html.twig');
+        return $this->render('SchoolcontactFormationBundle:Pages:contact.html.twig');
+    }
+    public function visiteAction()
+    {
+        return $this->render('SchoolcontactFormationBundle:Formation:visite.html.twig');
     }
 }
