@@ -197,3 +197,7 @@ div.top-formation {
 #bt-submit-search {
 	margin-left: 200px;
 }
+
+#ville-select {
+	display: none;
+}

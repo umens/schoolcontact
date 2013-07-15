@@ -12,4 +12,11 @@ use Doctrine\ORM\EntityRepository;
  */
 class VilleRepository extends EntityRepository
 {
+	public function findVilleByID($id)
+    {
+        return $this->getEntityManager()
+            ->createQuery('SELECT v FROM SchoolcontactFormationBundle:Ville v
+                            WHERE v.id = '.$id)
+            ->getArrayResult();
+    }
 }

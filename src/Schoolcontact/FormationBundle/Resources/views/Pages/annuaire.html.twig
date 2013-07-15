@@ -7,7 +7,8 @@
 {% endblock %}
 
 {% block javascripts %}
-    <script src="{{ asset('js/annuaire.js') }}"></script>
+  <script src="/js/vendor/handlebars.js"></script>
+  <script src="{{ asset('js/annuaire.js') }}"></script>
 {% endblock %}
 
 {% block body %}
@@ -72,12 +73,20 @@
                               <label for="keros-region" class="title region">Région</label>
                               <select id="region-select" name="region" classname="crawlable-selectbox-on">
                                 <option value="">Choisissez une région</option>
-                                <option value="1">Alsace</option>
+                                {% for region in regions %}
+                                  <option value="{{ region.id }}">{{ region.name }}</option>
+                                {% endfor %}
                               </select>                       
 
-                              <select name="departement" id="departement-select" style="">                     
+                              <select name="departement" id="departement-select">                     
                                 <option value="">Choisissez un département</option>
-                                <option value="1">01 - Ain</option>
+                                {% for departement in departements %}
+                                  <option value="{{ departement.id }}">{{ departement.code }} - {{ departement.name }}</option>
+                                {% endfor %}
+                              </select>
+
+                              <select name="ville" id="ville-select">                     
+                                <option value="">Choisissez une ville</option>
                               </select>
                             </div>
                         </fieldset>
@@ -110,7 +119,25 @@
             </div>
 
             <div class="top-formation">
-                Top 10 des formations
+                <p>Top 10 des formations</p>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Formation</th>
+                      <th>Etablissement</th>
+                      <th>Statut</th>
+                      <th>Département</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr>
+                  </tbody>
+                </table>
             </div>
         </div>
 
@@ -120,4 +147,10 @@
       </div>
     </div>
 </div>
+
+<script id="ville-template" type="text/x-handlebars-template">
+    {% raw %}
+      <option value="{{ id }}">{{ nom }}</option>
+    {% endraw %}
+</script>
 {% endblock %}

@@ -5,6 +5,9 @@ schoolcontact_formation_homepage:
 schoolcontact_annuaire_homepage:
     pattern:  /annuaire
     defaults: { _controller: SchoolcontactFormationBundle:Formation:annuaire }
+schoolcontact_annuaire_ajax_ville:
+    pattern:  /ajax/ville/{id}
+    defaults: { _controller: SchoolcontactFormationBundle:Formation:ajaxVilleId }
 
 
 schoolcontact_formation_geographique_region:

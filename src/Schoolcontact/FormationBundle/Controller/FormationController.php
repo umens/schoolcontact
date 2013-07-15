@@ -3,6 +3,7 @@
 namespace Schoolcontact\FormationBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
 use Schoolcontact\FormationBundle\Entity\Departement;
@@ -132,7 +133,38 @@ class FormationController extends Controller
 
     public function annuaireAction()
     {
-        return $this->render('SchoolcontactFormationBundle:Pages:annuaire.html.twig');
+        $regions = $this->getDoctrine()
+            ->getRepository('SchoolcontactFormationBundle:Region')
+            ->findAll();
+
+        if (!$regions) {
+            throw $this->createNotFoundException(
+                'No Region found'
+            );
+        }
+        
+        $departements = $this->getDoctrine()
+            ->getRepository('SchoolcontactFormationBundle:Departement')
+            ->findAll();
+
+        if (!$departements) {
+            throw $this->createNotFoundException(
+                'No Departement found'
+            );
+        }
+
+        return $this->render('SchoolcontactFormationBundle:Pages:annuaire.html.twig',
+            array('regions' => $regions, 'departements' => $departements)
+        );
+    }
+
+    public function ajaxVilleIdAction($id)
+    {
+        $villes = $this->getDoctrine()
+            ->getRepository('SchoolcontactFormationBundle:Ville')
+            ->findVilleByID($id);
+
+        return new Response(json_encode($villes));
     }
 
     public function consulterAction()
