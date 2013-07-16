@@ -2,6 +2,32 @@ body {
 	padding-top: 60px;
 }
 
+#container-base {
+	margin-top: 7px;
+}
+
+#logo2{
+	width: 100%;
+	text-align: center;
+	color: #6A6A6A;
+}
+
+.menu-bottom > ul > li{
+	display: block;
+	float: left;
+	width: 25%;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.menu-bottom > ul > li > img{
+	height: 25px;
+}
+
+footer{
+	margin-top: 20px;
+}
+
 .modalDialog {
 	position: fixed;
 	top: 0;

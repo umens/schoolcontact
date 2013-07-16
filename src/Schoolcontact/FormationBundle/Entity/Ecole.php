@@ -206,4 +206,60 @@ class Ecole
     {
         return $this->formations;
     }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Ecole
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Add villes
+     *
+     * @param \Schoolcontact\FormationBundle\Entity\Ville $villes
+     * @return Ecole
+     */
+    public function addVille(\Schoolcontact\FormationBundle\Entity\Ville $villes)
+    {
+        $this->villes[] = $villes;
+    
+        return $this;
+    }
+
+    /**
+     * Remove villes
+     *
+     * @param \Schoolcontact\FormationBundle\Entity\Ville $villes
+     */
+    public function removeVille(\Schoolcontact\FormationBundle\Entity\Ville $villes)
+    {
+        $this->villes->removeElement($villes);
+    }
+
+    /**
+     * Get villes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getVilles()
+    {
+        return $this->villes;
+    }
 }

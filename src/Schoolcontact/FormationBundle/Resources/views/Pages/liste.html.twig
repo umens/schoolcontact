@@ -1,0 +1,22 @@
+{% extends 'SchoolcontactFormationBundle::layout.html.twig' %}
+
+{% block title %}Résultat de la recherche{% endblock %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+
+{% block body %}
+{% if formations|length > 0 %}
+    <ul>
+		{% for formation in formations %}
+		    <li><a href="{{ path('schoolcontact_formation_view', { 'id': formation.id }) }}">{{ formation.name }}</a></li>
+		{% endfor %}
+	</ul>
+{% else %}
+	<p>Il n'y a pas de résultat(s)</p>
+{% endif %}
+{% endblock %}

@@ -65,8 +65,8 @@ class FOSUBUserProvider extends BaseClass
                     $user->setFirstname($data['first_name']);
                     $user->setLastname($data['last_name']);
                     $user->setGender($data['gender']);
-                    $user->setLocation($data['location']['name']);     
-                    $user->setBirthday($data['birthday']);  
+                    $user->setLocation($data['location']['name']);
+                    $user->setBirthday(\DateTime::createFromFormat('m/j/Y', $data["birthday"]));  
                     break;
 
                 case 'twitter':

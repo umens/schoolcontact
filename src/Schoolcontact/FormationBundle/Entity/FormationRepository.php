@@ -12,4 +12,40 @@ use Doctrine\ORM\EntityRepository;
  */
 class FormationRepository extends EntityRepository
 {
+
+	public function getFormationsParRegion($region)
+	{
+		$qb = $this->createQueryBuilder('f')
+				   ->leftJoin('f.ecole', 'e')
+				   ->leftJoin('e.villes', 'v')
+				   ->leftJoin('v.departement', 'd')
+				   ->leftJoin('d.region', 'r')
+				   ->where('r.id = :id')
+				   ->setParameter('id', $region)
+				   ->groupBy('f.name');
+
+		return $qb->getQuery()->getResult();
+	}
+
+	public function getFormationsParDepartements($departement)
+	{
+		$qb = $this->createQueryBuilder('f')
+				   ->leftJoin('f.ecole', 'e')
+				   ->leftJoin('e.villes', 'v')
+				   ->leftJoin('v.departement', 'd')
+				   ->where('d.id = :id')
+				   ->setParameter('id', $departement)
+				   ->groupBy('f.name');
+
+		return $qb->getQuery()->getResult();
+	}
+
+	public function myFindAll()
+	{
+	  	return $this->createQueryBuilder('f')
+	  				->groupBy('f.name')
+	                ->getQuery()
+	                ->getResult();
+	}
+
 }

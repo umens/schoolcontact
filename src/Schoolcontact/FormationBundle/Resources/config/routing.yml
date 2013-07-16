@@ -22,6 +22,11 @@ schoolcontact_formation_all:
     pattern: /all-formations
     defaults: { _controller: SchoolcontactFormationBundle:Formation:listFormation }
 
+schoolcontact_formation_view:
+    pattern: /formation/{id}
+    defaults: { _controller: SchoolcontactFormationBundle:Formation:viewFormation }
+
+
 
 schoolcontact_connecte_homepage:
     pattern:  /consulter

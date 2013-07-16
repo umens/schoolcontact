@@ -51,9 +51,9 @@ class FormationController extends Controller
 
         $repository = $this->getDoctrine()->getManager()->getRepository('SchoolcontactFormationBundle:Formation');
 
-        $formations = $repository->findAll();
+        $formations = $repository->myFindAll();
         
-        return $this->render('SchoolcontactFormationBundle:Formation:viewFormation.html.twig', array('formation' => $formation));
+        return $this->render('SchoolcontactFormationBundle:Pages:liste.html.twig', array('formations' => $formations));
     
     }
 
@@ -63,7 +63,7 @@ class FormationController extends Controller
 
         $formation = $repository->findOneById($id);
         
-        return $this->render('SchoolcontactFormationBundle:Formation:viewFormation.html.twig', array('formation' => $formation));
+        return $this->render('SchoolcontactFormationBundle:Pages:view.html.twig', array('formation' => $formation));
     
     }
 
@@ -74,9 +74,9 @@ class FormationController extends Controller
 
         $repository = $this->getDoctrine()->getManager()->getRepository('SchoolcontactFormationBundle:Formation');
 
-        $formations = $repository->findBy(array('region_id' => $region->getId()));
+        $formations = $repository->getFormationsParRegion($region->getId());
         
-        return $this->render('SchoolcontactFormationBundle:Formation:viewFormation.html.twig', array('formation' => $formation));
+        return $this->render('SchoolcontactFormationBundle:Pages:liste.html.twig', array('formations' => $formations));
     
     }
 
@@ -84,9 +84,9 @@ class FormationController extends Controller
 
         $repository = $this->getDoctrine()->getManager()->getRepository('SchoolcontactFormationBundle:Formation');
 
-        $formations = $repository->findBy(array('departement' => $departement));
+        $formations = $repository->getFormationsParDepartements($departement->getId());
         
-        return $this->render('SchoolcontactFormationBundle:Formation:viewFormation.html.twig', array('formation' => $formation));
+        return $this->render('SchoolcontactFormationBundle:Pages:liste.html.twig', array('formations' => $formations));
     
     }
 

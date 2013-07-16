@@ -56,15 +56,8 @@ class Ville
      */
     private $ecoles;
 
-    /**
-     * @ORM\ManyToMany(targetEntity="Schoolcontact\FormationBundle\Entity\Structure", inversedBy="villes")
-     * @ORM\JoinTable(name="structure_ecole")
-     */
-    private $structures;
-
     public function __construct() {
         $this->ecoles = new ArrayCollection();
-        $this->structures = new ArrayCollection();
     }
 
 

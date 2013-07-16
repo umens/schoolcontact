@@ -83,11 +83,11 @@ class User extends BaseUser
     protected $location;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="birthday", type="string", length=255, nullable=true) 
+     * @ORM\Column(name="birthday", type="date", nullable=true)
      */
-    protected $birthday;
+    private $birthday;
 
     public function __construct()
     {
@@ -310,8 +310,8 @@ class User extends BaseUser
     /**
      * Set birthday
      *
-     * @param string $birthday
-     * @return User
+     * @param \DateTime $birthday
+     * @return form
      */
     public function setBirthday($birthday)
     {
@@ -323,7 +323,7 @@ class User extends BaseUser
     /**
      * Get birthday
      *
-     * @return string 
+     * @return \DateTime 
      */
     public function getBirthday()
     {
