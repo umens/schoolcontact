@@ -1,135 +1,165 @@
+.modalDialog {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0.8);
+        z-index: 99999;
+        opacity:0;
+        -webkit-transition: opacity 400ms ease-in;
+        -moz-transition: opacity 400ms ease-in;
+        transition: opacity 400ms ease-in;
+        pointer-events: none;
+        overflow: scroll;
+    }
+
+    .modalDialog:target {
+        opacity:1;
+        pointer-events: auto;
+    }
+
+    .modalDialog > div {
+        width: 30%;
+        position: relative;
+        margin: 20% auto;
+        padding: 25px 20px 13px 20px;
+        border-radius: 10px;
+        background: #fff;
+        background: -moz-linear-gradient(#fff, #999);
+        background: -webkit-linear-gradient(#fff, #999);
+        background: -o-linear-gradient(#fff, #999);
+    }
 div#logo{
-    width:100%;
-    text-align: center;
-    color: #6A6A6A;
+        width:100%;
+        text-align: center;
+        color: #6A6A6A;
 }
 
 div#logo img{
-    margin: 0 auto;
-    display: block;
+        margin: 0 auto;
+        display: block;
 }
 
 #blocForm{
-    width: 100%;
-    height: auto;
+        width: 100%;
+        height: auto;
 }
 
 #inscription{
-    width: 49%;
-    height: auto;
-    float: left;
-    text-align: center;
-    border-right: 2px dotted #6A6A6A;
+        width: 49%;
+        height: auto;
+        float: left;
+        text-align: center;
+        border-right: 2px dotted #6A6A6A;
 }
 
 #connexion{
-    width: 49%;
-    height: auto;
-    float: left;
-    text-align: center;
+        width: 49%;
+        height: auto;
+        float: left;
+        text-align: center;
 }
 
 label.labelInsc{
-    float: left;
-    width: 200px;
-    text-align: left;
+        float: left;
+        width: 200px;
+        text-align: left;
 }
 
 #formInsc ul li{
-    list-style: none;
+        list-style: none;
 }
 
 button#valide {
-	width: 80px;
-	border-radius: 20px;
-	background-color: rgb(51, 51, 51);
-	color: white;
+width: 80px;
+border-radius: 20px;
+background-color: rgb(51, 51, 51);
+color: white;
 }
-
 .deposer {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: rgba(0,0,0,0.8);
-	z-index: 99999;
-	opacity:0;
-	-webkit-transition: opacity 400ms ease-in;
-	-moz-transition: opacity 400ms ease-in;
-	transition: opacity 400ms ease-in;
-	pointer-events: none;
-	overflow: scroll;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0.8);
+        z-index: 99999;
+        opacity:0;
+        -webkit-transition: opacity 400ms ease-in;
+        -moz-transition: opacity 400ms ease-in;
+        transition: opacity 400ms ease-in;
+        pointer-events: none;
+        overflow: scroll;
+    }
+
+    .deposer:target {
+        opacity:1;
+        pointer-events: auto;
+    }
+
+    .deposer > div {
+        width: 30%;
+        position: relative;
+        margin: 20% auto;
+        padding: 25px 20px 13px 20px;
+        border-radius: 10px;
+        background: #fff;
+        background: -moz-linear-gradient(#fff, #999);
+        background: -webkit-linear-gradient(#fff, #999);
+        background: -o-linear-gradient(#fff, #999);
+    }
+    h4, h3{
+    color : #f7931e;
 }
 
-.deposer:target {
-	opacity:1;
-	pointer-events: auto;
-}
-
-.deposer > div {
-	width: 30%;
-	position: relative;
-	margin: 20% auto;
-	padding: 25px 20px 13px 20px;
-	border-radius: 10px;
-	background: #fff;
-	background: -moz-linear-gradient(#fff, #999);
-	background: -webkit-linear-gradient(#fff, #999);
-	background: -o-linear-gradient(#fff, #999);
-}
-h4, h3{
-color : #f7931e;
-}
-
-#custom-search-form {
-    width:100%;
-}
-
-#custom-search-form .search-query {
-    padding-right: 3px;
-    padding-right: 4px \9;
-    padding-left: 3px;
-    padding-left: 4px \9;
-    /* IE7-8 doesn't have border-radius, so don't indent the padding */
-
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-}
-
-#custom-search-form button {
-    border: 0;
-    background: none;
-    /** belows styles are working good */
-    padding: 2px 5px;
-    margin-top: 2px;
-    position: relative;
-    left: -28px;
-    /* IE7-8 doesn't have border-radius, so don't indent the padding */
-    margin-bottom: 0;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-}
-
-.search-query:focus + button {
-    z-index: 3;   
-}
-
-.btn-validation{
- 	background-color: #1b1b1b;
-	background-image: -moz-linear-gradient(top, #222222, #111111);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
-	background-image: -webkit-linear-gradient(top, #222222, #111111);
-	background-image: -o-linear-gradient(top, #222222, #111111);
-	background-image: linear-gradient(to bottom, #222222, #111111);
-	background-repeat: repeat-x;
-	border-color: #252525;
-	text-decoration: none;
-	background-position: 0 -15px;
-	-webkit-transition: background-position 0.1s linear;
-	-moz-transition: background-position 0.1s linear;
-	-o-transition: background-position 0.1s linear;
-	transition: background-position 0.1s linear;
+  #custom-search-form {
+        width:100%;
+    }
+ 
+    #custom-search-form .search-query {
+        padding-right: 3px;
+        padding-right: 4px \9;
+        padding-left: 3px;
+        padding-left: 4px \9;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+ 
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+ 
+    #custom-search-form button {
+        border: 0;
+        background: none;
+        /** belows styles are working good */
+        padding: 2px 5px;
+        margin-top: 2px;
+        position: relative;
+        left: -28px;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+ 
+    .search-query:focus + button {
+        z-index: 3;   
+    }
+ .btn-validation{
+    background-color: #1b1b1b;
+background-image: -moz-linear-gradient(top, #222222, #111111);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+background-image: -webkit-linear-gradient(top, #222222, #111111);
+background-image: -o-linear-gradient(top, #222222, #111111);
+background-image: linear-gradient(to bottom, #222222, #111111);
+background-repeat: repeat-x;
+border-color: #252525;
+text-decoration: none;
+background-position: 0 -15px;
+-webkit-transition: background-position 0.1s linear;
+-moz-transition: background-position 0.1s linear;
+-o-transition: background-position 0.1s linear;
+transition: background-position 0.1s linear;
  }
